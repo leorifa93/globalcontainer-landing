@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zahlung erfolgreich - GlobalContainer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mobile-optimizations.css">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <meta name="theme-color" content="#A0522D">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="logo-small.png" alt="GlobalContainer" class="nav-icon">
+                <span class="nav-title">GlobalContainer</span>
+            </div>
+            
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#features" class="nav-link">Features</a>
+                <a href="index.html#pricing" class="nav-link">Preise</a>
+                <a href="kontakt.html" class="nav-link">Kontakt</a>
+            </div>
+            
+            <div class="nav-actions">
+                <a href="index.html#login" class="btn btn-outline">Anmelden</a>
+                <a href="#" class="btn btn-primary" onclick="showComingSoon()">App herunterladen</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <a href="index.html" class="mobile-menu-link">Home</a>
+                <a href="index.html#features" class="mobile-menu-link">Features</a>
+                <a href="index.html#pricing" class="mobile-menu-link">Preise</a>
+                <a href="kontakt.html" class="mobile-menu-link">Kontakt</a>
+                <div class="mobile-menu-actions">
+                    <a href="index.html#login" class="btn btn-outline">Anmelden</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Payment Success Section -->
+    <section class="payment-success">
+        <div class="container">
+            <div class="payment-success-content">
+                <div class="success-icon">✅</div>
+                <h1 class="success-title">Zahlung erfolgreich!</h1>
+                <p class="success-message">
+                    Vielen Dank für deine Zahlung. Du wirst in Kürze zur GlobalContainer App weitergeleitet.
+                </p>
+                <div class="success-details">
+                    <p><strong>Status:</strong> <span id="paymentStatus">Erfolgreich</span></p>
+                    <p><strong>Booking ID:</strong> <span id="bookingId">-</span></p>
+                </div>
+                <div class="redirect-info">
+                    <p>Weiterleitung zur App in <span id="countdown">3</span> Sekunden...</p>
+                    <button class="btn btn-primary" onclick="redirectToApp()">
+                        Jetzt zur App
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="logo-small.png" alt="GlobalContainer" class="footer-icon">
+                    <span class="footer-title">GlobalContainer</span>
+                </div>
+                <div class="footer-links">
+                    <a href="agb.html" class="footer-link">AGB</a>
+                    <a href="datenschutz.html" class="footer-link">Datenschutz</a>
+                    <a href="impressum.html" class="footer-link">Impressum</a>
+                    <a href="kontakt.html" class="footer-link">Kontakt</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 GlobalContainer. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+
+        // Coming Soon Alert
+        function showComingSoon() {
+            alert('🚛 GlobalContainer App\n\nDie App ist in Kürze verfügbar!\n\nBleib auf dem Laufenden und folge uns für Updates.\n\nVielen Dank für dein Interesse!');
+        }
+
+        // Redirect to App
+        function redirectToApp() {
+            // Versuche App Deep Link
+            window.location.href = "globalcontainerapp://payment-return?status=success";
+            
+            // Fallback: Nach 2 Sekunden zum App Store
+            setTimeout(() => {
+                window.location.href = "https://apps.apple.com/app/globalcontainer";
+            }, 2000);
+        }
+
+        // URL Parameter auslesen
+        function getUrlParams() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const status = urlParams.get('status') || 'success';
+            const bookingId = urlParams.get('bookingId') || '-';
+            
+            document.getElementById('paymentStatus').textContent = status === 'success' ? 'Erfolgreich' : 'Fehler';
+            document.getElementById('bookingId').textContent = bookingId;
+        }
+
+        // Countdown Timer
+        function startCountdown() {
+            let count = 3;
+            const countdownElement = document.getElementById('countdown');
+            
+            const timer = setInterval(() => {
+                count--;
+                countdownElement.textContent = count;
+                
+                if (count <= 0) {
+                    clearInterval(timer);
+                    redirectToApp();
+                }
+            }, 1000);
+        }
+
+        // Initialisierung
+        document.addEventListener('DOMContentLoaded', function() {
+            getUrlParams();
+            startCountdown();
+        });
+    </script>
+</body>
+</html>

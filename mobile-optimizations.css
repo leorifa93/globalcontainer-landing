@@ -473,6 +473,52 @@
     
 }
 
+/* Payment Success Mobile */
+@media (max-width: 768px) {
+    .payment-success {
+        padding: 40px 0;
+        min-height: 50vh;
+    }
+    
+    .payment-success-content {
+        padding: 40px 20px;
+        margin: 0 20px;
+    }
+    
+    .success-icon {
+        font-size: 60px;
+        margin-bottom: 20px;
+    }
+    
+    .success-title {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+    
+    .success-message {
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+    
+    .success-details {
+        padding: 15px;
+        margin-bottom: 25px;
+    }
+    
+    .success-details p {
+        font-size: 14px;
+    }
+    
+    .redirect-info p {
+        font-size: 14px;
+    }
+    
+    .redirect-info .btn {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+}
+
 /* Extra Small Mobile */
 @media (max-width: 480px) {
     .hero-title {
