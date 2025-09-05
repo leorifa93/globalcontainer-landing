@@ -117,7 +117,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-icon {
-    font-size: 32px;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+    background-color: white;
+    border-radius: 8px;
+    padding: 6px;
+    opacity: 1 !important;
+    transition: none !important;
 }
 
 .nav-links {
@@ -565,7 +574,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-icon {
-    font-size: 32px;
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+    background-color: white;
+    border-radius: 8px;
+    padding: 6px;
+    opacity: 1 !important;
+    transition: none !important;
 }
 
 .footer-title {

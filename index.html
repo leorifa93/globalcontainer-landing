@@ -5,18 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GlobalContainer - Sichere Transporte nach Afrika</title>
     <meta name="description" content="Verbinde dich mit vertrauenswürdigen Transporteuren und verschicke deine Güter sicher und zuverlässig nach Afrika. Transparente Preise, Echtzeit-Tracking und sichere Zahlungen.">
+    <meta name="theme-color" content="#A0522D">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🚛%3C/text%3E%3C/svg%3E">
+    <link rel="stylesheet" href="mobile-optimizations.css">
+    <link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/png" href="icon.png">
+    <link rel="icon" type="image/png" href="icon.png">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-brand">
-                <span class="nav-icon">🚛</span>
+                <img src="logo-small.png" alt="GlobalContainer" class="nav-icon">
                 <span class="nav-title">GlobalContainer</span>
             </div>
             <div class="nav-links">
@@ -29,8 +37,27 @@
                 <a href="#" class="btn btn-outline">Anmelden</a>
                 <a href="#" class="btn btn-primary">App herunterladen</a>
             </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
         </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose">×</button>
+        <div class="mobile-menu-links">
+            <a href="#features" class="mobile-menu-link">Features</a>
+            <a href="#how-it-works" class="mobile-menu-link">So funktioniert's</a>
+            <a href="#pricing" class="mobile-menu-link">Preise</a>
+            <a href="kontakt.html" class="mobile-menu-link">Kontakt</a>
+            <a href="agb.html" class="mobile-menu-link">AGB</a>
+            <a href="datenschutz.html" class="mobile-menu-link">Datenschutz</a>
+            <a href="impressum.html" class="mobile-menu-link">Impressum</a>
+        </div>
+        <div class="mobile-menu-actions">
+            <a href="#" class="btn btn-outline btn-large">Anmelden</a>
+            <a href="#" class="btn btn-primary btn-large">App herunterladen</a>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -272,7 +299,7 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <div class="footer-logo">
-                        <span class="footer-icon">🚛</span>
+                        <img src="logo-small.png" alt="GlobalContainer" class="footer-icon">
                         <span class="footer-title">GlobalContainer</span>
                     </div>
                     <p class="footer-description">
@@ -308,6 +335,46 @@
         </div>
     </footer>
 
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuClose = document.getElementById('mobileMenuClose');
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+
+            if (mobileMenuClose) {
+                mobileMenuClose.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            }
+
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            if (mobileMenu) {
+                mobileMenu.addEventListener('click', function(e) {
+                    if (e.target === mobileMenu) {
+                        mobileMenu.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
