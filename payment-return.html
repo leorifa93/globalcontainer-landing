@@ -125,18 +125,19 @@
                 const deepLink = "globalcontainerapp://payment-return?status=success";
                 const appStoreLink = "https://apps.apple.com/app/globalcontainer";
                 
-                // Erstelle einen unsichtbaren iframe für den Deep Link
-                const iframe = document.createElement('iframe');
-                iframe.style.display = 'none';
-                iframe.src = deepLink;
-                document.body.appendChild(iframe);
+                // Zeige eine Nachricht an
+                alert('🚛 GlobalContainer App\n\nDie App wird geöffnet...\n\nFalls die App nicht geöffnet wird, wirst du zum App Store weitergeleitet.');
                 
-                // Nach 1 Sekunde zum App Store weiterleiten
+                // Versuche Deep Link
+                window.location.href = deepLink;
+                
+                // Fallback: Nach 3 Sekunden zum App Store
                 setTimeout(() => {
                     window.location.href = appStoreLink;
-                }, 1000);
+                }, 3000);
             } else {
-                // Desktop: Direkt zur Landing Page
+                // Desktop: Zeige Erfolgsmeldung und leite zur Landing Page weiter
+                alert('🚛 GlobalContainer App\n\nZahlung erfolgreich!\n\nLade die App herunter, um deine Buchung zu verwalten.');
                 window.location.href = "https://globalcontainer-landing.vercel.app/";
             }
         }
@@ -145,8 +146,18 @@
         function getUrlParams() {
             const urlParams = new URLSearchParams(window.location.search);
             const status = urlParams.get('status') || 'success';
-            const bookingId = urlParams.get('bookingId') || urlParams.get('booking_id') || 'Nicht verfügbar';
-            const paymentId = urlParams.get('payment_intent') || urlParams.get('paymentId') || 'Nicht verfügbar';
+            
+            // Verschiedene mögliche Parameter-Namen für Booking ID
+            const bookingId = urlParams.get('bookingId') || 
+                             urlParams.get('booking_id') || 
+                             urlParams.get('booking') ||
+                             urlParams.get('id') ||
+                             'Nicht verfügbar';
+            
+            const paymentId = urlParams.get('payment_intent') || 
+                             urlParams.get('paymentId') || 
+                             urlParams.get('payment_id') ||
+                             'Nicht verfügbar';
             
             // Status anzeigen
             document.getElementById('paymentStatus').textContent = status === 'success' ? 'Erfolgreich' : 'Fehler';
@@ -170,8 +181,14 @@
                 status: status,
                 bookingId: bookingId,
                 paymentId: paymentId,
-                allParams: Object.fromEntries(urlParams)
+                allParams: Object.fromEntries(urlParams),
+                fullURL: window.location.href
             });
+            
+            // Zeige alle Parameter auf der Seite an (für Debug)
+            if (bookingId === 'Nicht verfügbar') {
+                document.getElementById('bookingId').innerHTML = 'Nicht verfügbar<br><small style="color: #666;">Debug: ' + window.location.search + '</small>';
+            }
         }
 
         // Countdown Timer
