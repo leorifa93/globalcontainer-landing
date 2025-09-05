@@ -388,6 +388,48 @@
         text-align: center;
         padding: 0 16px;
     }
+    
+    /* Legal Pages Mobile */
+    .legal-content h1 {
+        font-size: 28px;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        padding: 0 16px;
+    }
+    
+    .legal-content h2 {
+        font-size: 22px;
+        line-height: 1.3;
+        margin: 24px 0 16px 0;
+        padding: 0 16px;
+    }
+    
+    .legal-content h3 {
+        font-size: 18px;
+        line-height: 1.4;
+        margin: 20px 0 12px 0;
+        padding: 0 16px;
+    }
+    
+    .legal-content p {
+        padding: 0 16px;
+        line-height: 1.6;
+        margin-bottom: 16px;
+    }
+    
+    .legal-content ul, .legal-content ol {
+        padding: 0 16px 0 32px;
+        margin-bottom: 16px;
+    }
+    
+    .legal-content li {
+        margin-bottom: 8px;
+        line-height: 1.5;
+    }
+    
+    .legal-content .container {
+        padding: 0;
+    }
 }
 
 /* Extra Small Mobile */

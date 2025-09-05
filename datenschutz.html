@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mobile-optimizations.css">
     <link rel="icon" type="image/png" sizes="64x64" href="favicon-64x64.png">
     <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -29,8 +30,26 @@
                 <a href="agb.html" class="nav-link">AGB</a>
                 <a href="impressum.html" class="nav-link">Impressum</a>
             </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
         </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose">×</button>
+        <div class="mobile-menu-links">
+            <a href="index.html" class="mobile-menu-link">Startseite</a>
+            <a href="index.html#features" class="mobile-menu-link">Features</a>
+            <a href="index.html#pricing" class="mobile-menu-link">Preise</a>
+            <a href="kontakt.html" class="mobile-menu-link">Kontakt</a>
+            <a href="agb.html" class="mobile-menu-link">AGB</a>
+            <a href="datenschutz.html" class="mobile-menu-link active">Datenschutz</a>
+            <a href="impressum.html" class="mobile-menu-link">Impressum</a>
+        </div>
+        <div class="mobile-menu-actions">
+            <a href="index.html" class="btn btn-outline btn-large">Zurück zur Startseite</a>
+        </div>
+    </div>
 
     <!-- Content -->
     <main class="legal-content">
@@ -266,5 +285,45 @@
             </div>
         </div>
     </footer>
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuClose = document.getElementById('mobileMenuClose');
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+
+            if (mobileMenuClose) {
+                mobileMenuClose.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            }
+
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            if (mobileMenu) {
+                mobileMenu.addEventListener('click', function(e) {
+                    if (e.target === mobileMenu) {
+                        mobileMenu.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
