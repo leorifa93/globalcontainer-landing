@@ -35,7 +35,7 @@
             </div>
             <div class="nav-actions">
                 <a href="#" class="btn btn-outline">Anmelden</a>
-                <a href="#" class="btn btn-primary">App herunterladen</a>
+                <a href="#" class="btn btn-primary" onclick="showComingSoon()">App herunterladen</a>
             </div>
             <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
         </div>
@@ -55,7 +55,7 @@
         </div>
         <div class="mobile-menu-actions">
             <a href="#" class="btn btn-outline btn-large">Anmelden</a>
-            <a href="#" class="btn btn-primary btn-large">App herunterladen</a>
+            <a href="#" class="btn btn-primary btn-large" onclick="showComingSoon()">App herunterladen</a>
         </div>
     </div>
 
@@ -70,7 +70,7 @@
                     Verbinde dich mit vertrauenswürdigen Transporteuren und verschicke deine Güter sicher und zuverlässig. Transparente Preise, Echtzeit-Tracking und sichere Zahlungen.
                 </p>
                 <div class="hero-actions">
-                    <a href="#" class="btn btn-primary btn-large">
+                    <a href="#" class="btn btn-primary btn-large" onclick="showComingSoon()">
                         <span class="btn-icon">📱</span>
                         App herunterladen
                     </a>
@@ -280,11 +280,11 @@
                     Lade die GlobalContainer App herunter und beginne noch heute mit sicheren Transporten nach Afrika.
                 </p>
                 <div class="cta-actions">
-                    <a href="#" class="btn btn-primary btn-large">
+                    <a href="#" class="btn btn-primary btn-large" onclick="showComingSoon()">
                         <span class="btn-icon">📱</span>
                         App herunterladen
                     </a>
-                    <a href="#" class="btn btn-outline btn-large">
+                    <a href="kontakt.html" class="btn btn-outline btn-large">
                         <span class="btn-icon">📧</span>
                         Kontakt aufnehmen
                     </a>
@@ -336,6 +336,11 @@
     </footer>
 
     <script>
+        // Coming Soon Alert
+        function showComingSoon() {
+            alert('🚛 GlobalContainer App\n\nDie App ist in Kürze verfügbar!\n\nBleib auf dem Laufenden und folge uns für Updates.\n\nVielen Dank für dein Interesse!');
+        }
+
         // Mobile Menu Toggle
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
