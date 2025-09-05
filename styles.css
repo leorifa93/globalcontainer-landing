@@ -793,8 +793,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .contact-method {
     display: flex;
+    flex-direction: column;
     gap: 20px;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
 }
 
 .method-icon {
@@ -812,6 +814,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .method-content {
     flex: 1;
+    text-align: center;
 }
 
 .method-title {
@@ -839,24 +842,6 @@ h1, h2, h3, h4, h5, h6 {
     color: #a75f38;
 }
 
-.method-address {
-    font-size: 16px;
-    color: #3B2F2F;
-    font-style: normal;
-    line-height: 1.6;
-}
-
-.opening-hours {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.hours-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
 .hours-day {
     font-size: 14px;
