@@ -69,7 +69,8 @@
                 </p>
                 <div class="success-details">
                     <p><strong>Status:</strong> <span id="paymentStatus">Erfolgreich</span></p>
-                    <p><strong>Booking ID:</strong> <span id="bookingId">-</span></p>
+                    <p><strong>Booking ID:</strong> <span id="bookingId">Wird geladen...</span></p>
+                    <p><strong>Zahlungszeit:</strong> <span id="paymentTime">-</span></p>
                 </div>
                 <div class="redirect-info">
                     <p>Weiterleitung zur App in <span id="countdown">3</span> Sekunden...</p>
@@ -116,23 +117,61 @@
 
         // Redirect to App
         function redirectToApp() {
-            // Versuche App Deep Link
-            window.location.href = "globalcontainerapp://payment-return?status=success";
+            // Prüfe ob wir auf einem mobilen Gerät sind
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
             
-            // Fallback: Nach 2 Sekunden zum App Store
-            setTimeout(() => {
-                window.location.href = "https://apps.apple.com/app/globalcontainer";
-            }, 2000);
+            if (isMobile) {
+                // Versuche App Deep Link
+                const deepLink = "globalcontainerapp://payment-return?status=success";
+                const appStoreLink = "https://apps.apple.com/app/globalcontainer";
+                
+                // Erstelle einen unsichtbaren iframe für den Deep Link
+                const iframe = document.createElement('iframe');
+                iframe.style.display = 'none';
+                iframe.src = deepLink;
+                document.body.appendChild(iframe);
+                
+                // Nach 1 Sekunde zum App Store weiterleiten
+                setTimeout(() => {
+                    window.location.href = appStoreLink;
+                }, 1000);
+            } else {
+                // Desktop: Direkt zur Landing Page
+                window.location.href = "https://globalcontainer-landing.vercel.app/";
+            }
         }
 
         // URL Parameter auslesen
         function getUrlParams() {
             const urlParams = new URLSearchParams(window.location.search);
             const status = urlParams.get('status') || 'success';
-            const bookingId = urlParams.get('bookingId') || '-';
+            const bookingId = urlParams.get('bookingId') || urlParams.get('booking_id') || 'Nicht verfügbar';
+            const paymentId = urlParams.get('payment_intent') || urlParams.get('paymentId') || 'Nicht verfügbar';
             
+            // Status anzeigen
             document.getElementById('paymentStatus').textContent = status === 'success' ? 'Erfolgreich' : 'Fehler';
+            
+            // Booking ID anzeigen
             document.getElementById('bookingId').textContent = bookingId;
+            
+            // Zahlungszeit anzeigen
+            const now = new Date();
+            const timeString = now.toLocaleString('de-DE', {
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+            document.getElementById('paymentTime').textContent = timeString;
+            
+            // Debug: Alle Parameter in der Konsole ausgeben
+            console.log('URL Parameters:', {
+                status: status,
+                bookingId: bookingId,
+                paymentId: paymentId,
+                allParams: Object.fromEntries(urlParams)
+            });
         }
 
         // Countdown Timer
