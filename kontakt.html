@@ -33,8 +33,26 @@
             <div class="nav-actions">
                 <a href="#" class="btn btn-outline" onclick="showComingSoon()">App herunterladen</a>
             </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
         </div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose">×</button>
+        <div class="mobile-menu-links">
+            <a href="index.html" class="mobile-menu-link">Startseite</a>
+            <a href="index.html#features" class="mobile-menu-link">Features</a>
+            <a href="index.html#pricing" class="mobile-menu-link">Preise</a>
+            <a href="kontakt.html" class="mobile-menu-link active">Kontakt</a>
+            <a href="agb.html" class="mobile-menu-link">AGB</a>
+            <a href="datenschutz.html" class="mobile-menu-link">Datenschutz</a>
+            <a href="impressum.html" class="mobile-menu-link">Impressum</a>
+        </div>
+        <div class="mobile-menu-actions">
+            <a href="#" class="btn btn-outline btn-large" onclick="showComingSoon()">App herunterladen</a>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="contact-hero">
@@ -258,7 +276,7 @@
                     <div class="footer-column">
                         <h4 class="footer-heading">Support</h4>
                         <a href="mailto:support@globalcontainer.com" class="footer-link">Support</a>
-                        <a href="mailto:info@globalcontainer.com" class="footer-link">Kontakt</a>
+                        <a href="kontakt.html" class="footer-link">Kontakt</a>
                         <a href="kontakt.html" class="footer-link">FAQ</a>
                     </div>
                     <div class="footer-column">
@@ -282,6 +300,45 @@
         function showComingSoon() {
             alert('🚛 GlobalContainer App\n\nDie App ist in Kürze verfügbar!\n\nBleib auf dem Laufenden und folge uns für Updates.\n\nVielen Dank für dein Interesse!');
         }
+
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuClose = document.getElementById('mobileMenuClose');
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    mobileMenu.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+
+            if (mobileMenuClose) {
+                mobileMenuClose.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            }
+
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            if (mobileMenu) {
+                mobileMenu.addEventListener('click', function(e) {
+                    if (e.target === mobileMenu) {
+                        mobileMenu.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+        });
     </script>
     <script src="script.js"></script>
 </body>
