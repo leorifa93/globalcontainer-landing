@@ -77,9 +77,6 @@
                     <button class="btn btn-primary" onclick="redirectToApp()">
                         Jetzt zur App
                     </button>
-                    <button class="btn btn-outline" onclick="window.location.href='https://globalcontainer-landing.vercel.app/'">
-                        Zur Landing Page
-                    </button>
                 </div>
             </div>
         </div>
@@ -124,37 +121,41 @@
             const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
             
             if (isMobile) {
-                // Zeige eine Nachricht an
-                const userChoice = confirm('🚛 GlobalContainer App\n\nZahlung erfolgreich!\n\nMöchtest du die App öffnen?\n\nOK = App öffnen\nAbbrechen = Zur Landing Page');
+                // Versuche App Deep Link
+                const deepLink = "globalcontainerapp://payment-return?status=success";
                 
-                if (userChoice) {
-                    // Versuche App Deep Link
-                    const deepLink = "globalcontainerapp://payment-return?status=success";
+                // Methode 1: Direkter window.location.href
+                window.location.href = deepLink;
+                
+                // Methode 2: Fallback mit iframe (für iOS)
+                setTimeout(() => {
+                    const iframe = document.createElement('iframe');
+                    iframe.style.display = 'none';
+                    iframe.src = deepLink;
+                    document.body.appendChild(iframe);
                     
-                    // Erstelle einen unsichtbaren Link für den Deep Link
+                    // Nach 1 Sekunde iframe entfernen
+                    setTimeout(() => {
+                        document.body.removeChild(iframe);
+                    }, 1000);
+                }, 500);
+                
+                // Methode 3: Fallback mit Link (für Android)
+                setTimeout(() => {
                     const link = document.createElement('a');
                     link.href = deepLink;
                     link.style.display = 'none';
                     document.body.appendChild(link);
                     link.click();
                     document.body.removeChild(link);
-                    
-                    // Nach 2 Sekunden prüfen ob wir noch auf der Seite sind
-                    setTimeout(() => {
-                        // Wenn wir noch auf der Seite sind, wurde die App nicht geöffnet
-                        const appStoreLink = "https://apps.apple.com/app/globalcontainer";
-                        const installChoice = confirm('Die App konnte nicht geöffnet werden.\n\nMöchtest du die App aus dem App Store herunterladen?');
-                        
-                        if (installChoice) {
-                            window.location.href = appStoreLink;
-                        } else {
-                            window.location.href = "https://globalcontainer-landing.vercel.app/";
-                        }
-                    }, 2000);
-                } else {
-                    // Zur Landing Page
-                    window.location.href = "https://globalcontainer-landing.vercel.app/";
-                }
+                }, 1000);
+                
+                // Nach 3 Sekunden zum App Store falls App nicht geöffnet wurde
+                setTimeout(() => {
+                    const appStoreLink = "https://apps.apple.com/app/globalcontainer";
+                    window.location.href = appStoreLink;
+                }, 3000);
+                
             } else {
                 // Desktop: Zeige Erfolgsmeldung und leite zur Landing Page weiter
                 alert('🚛 GlobalContainer App\n\nZahlung erfolgreich!\n\nLade die App herunter, um deine Buchung zu verwalten.');
