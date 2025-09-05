@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - GlobalContainer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🚛%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="nav-icon">🚛</span>
+                <span class="nav-title">GlobalContainer</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Startseite</a>
+                <a href="index.html#features" class="nav-link">Features</a>
+                <a href="index.html#pricing" class="nav-link">Preise</a>
+                <a href="kontakt.html" class="nav-link active">Kontakt</a>
+            </div>
+            <div class="nav-actions">
+                <a href="#" class="btn btn-outline">App herunterladen</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Kontakt</h1>
+                <p class="hero-subtitle">
+                    Hast du Fragen zu GlobalContainer? Wir helfen dir gerne weiter!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <div class="contact-form-card">
+                        <h2 class="form-title">Nachricht senden</h2>
+                        <p class="form-subtitle">Sende uns eine Nachricht und wir melden uns schnellstmöglich bei dir.</p>
+                        
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Name *</label>
+                                <input type="text" id="name" name="name" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">E-Mail *</label>
+                                <input type="email" id="email" name="email" class="form-input" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Betreff *</label>
+                                <select id="subject" name="subject" class="form-select" required>
+                                    <option value="">Bitte wählen...</option>
+                                    <option value="general">Allgemeine Anfrage</option>
+                                    <option value="support">Technischer Support</option>
+                                    <option value="business">Geschäftspartnerschaft</option>
+                                    <option value="press">Presse & Medien</option>
+                                    <option value="other">Sonstiges</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="form-label">Nachricht *</label>
+                                <textarea id="message" name="message" class="form-textarea" rows="6" required placeholder="Beschreibe dein Anliegen..."></textarea>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="privacy" name="privacy" class="form-checkbox" required>
+                                <label for="privacy" class="checkbox-label">
+                                    Ich habe die <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zu. *
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-large form-submit">
+                                <span class="btn-icon">📧</span>
+                                Nachricht senden
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info-container">
+                    <div class="contact-info-card">
+                        <h2 class="info-title">Kontaktinformationen</h2>
+                        <p class="info-subtitle">Erreiche uns über verschiedene Kanäle</p>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="method-icon">📧</div>
+                                <div class="method-content">
+                                    <h3 class="method-title">E-Mail</h3>
+                                    <p class="method-description">Schreibe uns eine E-Mail</p>
+                                    <a href="mailto:info@globalcontainer.com" class="method-link">info@globalcontainer.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="method-icon">📞</div>
+                                <div class="method-content">
+                                    <h3 class="method-title">Telefon</h3>
+                                    <p class="method-description">Rufe uns an</p>
+                                    <a href="tel:+49123456789" class="method-link">+49 123 456 789</a>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="method-icon">📍</div>
+                                <div class="method-content">
+                                    <h3 class="method-title">Adresse</h3>
+                                    <p class="method-description">Unser Büro</p>
+                                    <address class="method-address">
+                                        GlobalContainer<br>
+                                        Musterstraße 123<br>
+                                        12345 Musterstadt<br>
+                                        Deutschland
+                                    </address>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="method-icon">⏰</div>
+                                <div class="method-content">
+                                    <h3 class="method-title">Öffnungszeiten</h3>
+                                    <p class="method-description">Erreichbarkeit</p>
+                                    <div class="opening-hours">
+                                        <div class="hours-item">
+                                            <span class="hours-day">Mo - Fr:</span>
+                                            <span class="hours-time">9:00 - 18:00</span>
+                                        </div>
+                                        <div class="hours-item">
+                                            <span class="hours-day">Sa:</span>
+                                            <span class="hours-time">10:00 - 14:00</span>
+                                        </div>
+                                        <div class="hours-item">
+                                            <span class="hours-day">So:</span>
+                                            <span class="hours-time">Geschlossen</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Häufige Fragen</h2>
+                <p class="section-subtitle">
+                    Antworten auf die wichtigsten Fragen zu GlobalContainer
+                </p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3 class="faq-question">Wie funktioniert die App?</h3>
+                    <p class="faq-answer">GlobalContainer verbindet Transportanbieter mit Suchenden. Du kannst entweder Transportplatz anbieten oder nach verfügbaren Transporten suchen. Die App vermittelt den Kontakt und übernimmt die sichere Zahlungsabwicklung.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">Was kostet die Nutzung?</h3>
+                    <p class="faq-answer">Die App ist kostenlos zu nutzen. Wir erheben eine Service-Gebühr von 19% auf den Transportpreis, die alle Plattform-Kosten, Zahlungsabwicklung und Support abdeckt.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">Wie sicher ist die Zahlung?</h3>
+                    <p class="faq-answer">Alle Zahlungen werden über Stripe abgewickelt, einen der führenden Zahlungsanbieter weltweit. Dein Geld ist geschützt bis zur erfolgreichen Lieferung.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">Welche Länder werden bedient?</h3>
+                    <p class="faq-answer">Wir vermitteln Transporte von Deutschland nach ganz Afrika. Du kannst spezifische Zielländer in der App auswählen und nach verfügbaren Routen suchen.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">Wie kann ich Transportpartner bewerten?</h3>
+                    <p class="faq-answer">Nach jedem abgeschlossenen Transport kannst du deinen Transportpartner bewerten. Das Bewertungssystem hilft anderen Nutzern bei der Auswahl vertrauenswürdiger Partner.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">Gibt es eine mobile App?</h3>
+                    <p class="faq-answer">Ja! GlobalContainer ist als mobile App für iOS und Android verfügbar. Du kannst sie kostenlos im App Store oder Google Play Store herunterladen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Bereit zu starten?</h2>
+                <p class="cta-subtitle">
+                    Lade die GlobalContainer App herunter und beginne noch heute mit sicheren Transporten nach Afrika.
+                </p>
+                <div class="cta-actions">
+                    <a href="#" class="btn btn-primary btn-large">
+                        <span class="btn-icon">📱</span>
+                        App herunterladen
+                    </a>
+                    <a href="mailto:info@globalcontainer.com" class="btn btn-outline btn-large">
+                        <span class="btn-icon">📧</span>
+                        E-Mail senden
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="footer-icon">🚛</span>
+                        <span class="footer-title">GlobalContainer</span>
+                    </div>
+                    <p class="footer-description">
+                        Dein zuverlässiger Partner für sichere Transporte nach Afrika.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-heading">App</h4>
+                        <a href="index.html" class="footer-link">Startseite</a>
+                        <a href="index.html#features" class="footer-link">Features</a>
+                        <a href="index.html#pricing" class="footer-link">Preise</a>
+                        <a href="kontakt.html" class="footer-link">Kontakt</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Support</h4>
+                        <a href="mailto:support@globalcontainer.com" class="footer-link">Support</a>
+                        <a href="mailto:info@globalcontainer.com" class="footer-link">Kontakt</a>
+                        <a href="kontakt.html" class="footer-link">FAQ</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-heading">Rechtliches</h4>
+                        <a href="agb.html" class="footer-link">AGB</a>
+                        <a href="datenschutz.html" class="footer-link">Datenschutz</a>
+                        <a href="impressum.html" class="footer-link">Impressum</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2025 GlobalContainer. Alle Rechte vorbehalten.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
