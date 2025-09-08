@@ -1067,6 +1067,71 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
 }
 
+/* Connect Return Pages */
+.connect-return {
+  text-align: center;
+  padding: 3rem 2rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.connect-return .success-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.connect-return h1 {
+  color: #3B2F2F;
+  margin-bottom: 1rem;
+}
+
+.connect-return p {
+  color: #6B4C3B;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.connect-return .actions {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.connect-return .btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.connect-return .btn-primary {
+  background: linear-gradient(135deg, #A0522D, #8B4513);
+  color: white;
+}
+
+.connect-return .btn-primary:hover {
+  background: linear-gradient(135deg, #8B4513, #A0522D);
+  transform: translateY(-2px);
+}
+
+.connect-return .btn-secondary {
+  background: #f8f9fa;
+  color: #3B2F2F;
+  border: 2px solid #e9ecef;
+}
+
+.connect-return .btn-secondary:hover {
+  background: #e9ecef;
+  transform: translateY(-2px);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {

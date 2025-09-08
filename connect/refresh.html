@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stripe Connect - Aktualisierung</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../mobile-optimizations.css">
+    <link rel="icon" type="image/png" sizes="64x64" href="../favicon-64x64.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="../favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <meta name="theme-color" content="#A0522D">
+</head>
+<body>
+    <div class="container">
+        <div class="connect-return">
+            <div class="success-icon">🔄</div>
+            <h1>Stripe Connect aktualisieren</h1>
+            <p>Deine Stripe-Verbindung wird aktualisiert.</p>
+            <p>Bitte warte einen Moment...</p>
+            
+            <div class="actions">
+                <button class="btn btn-primary" onclick="openApp()">
+                    🚛 Zur App zurückkehren
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openApp() {
+            const deepLink = "globalcontainerapp://connect/refresh?status=success";
+            const appStoreLink = "https://apps.apple.com/app/globalcontainer";
+            
+            try {
+                window.location.href = deepLink;
+                
+                setTimeout(() => {
+                    window.location.href = appStoreLink;
+                }, 3000);
+            } catch (error) {
+                window.location.href = appStoreLink;
+            }
+        }
+
+        // Automatisch zur App weiterleiten
+        setTimeout(() => {
+            openApp();
+        }, 2000);
+    </script>
+</body>
+</html>

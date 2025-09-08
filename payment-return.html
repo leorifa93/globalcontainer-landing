@@ -123,38 +123,48 @@
             if (isMobile) {
                 // Versuche App Deep Link
                 const deepLink = "globalcontainerapp://payment-return?status=success";
+                const appStoreLink = "https://apps.apple.com/app/globalcontainer";
                 
-                // Methode 1: Direkter window.location.href
-                window.location.href = deepLink;
-                
-                // Methode 2: Fallback mit iframe (für iOS)
-                setTimeout(() => {
-                    const iframe = document.createElement('iframe');
-                    iframe.style.display = 'none';
-                    iframe.src = deepLink;
-                    document.body.appendChild(iframe);
+                // Versuche App Deep Link mit try-catch
+                try {
+                    // Methode 1: Direkter window.location.href
+                    window.location.href = deepLink;
                     
-                    // Nach 1 Sekunde iframe entfernen
+                    // Methode 2: Fallback mit iframe (für iOS)
                     setTimeout(() => {
-                        document.body.removeChild(iframe);
+                        const iframe = document.createElement('iframe');
+                        iframe.style.display = 'none';
+                        iframe.src = deepLink;
+                        document.body.appendChild(iframe);
+                        
+                        // Nach 1 Sekunde iframe entfernen
+                        setTimeout(() => {
+                            if (document.body.contains(iframe)) {
+                                document.body.removeChild(iframe);
+                            }
+                        }, 1000);
+                    }, 500);
+                    
+                    // Methode 3: Fallback mit Link (für Android)
+                    setTimeout(() => {
+                        const link = document.createElement('a');
+                        link.href = deepLink;
+                        link.style.display = 'none';
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
                     }, 1000);
-                }, 500);
-                
-                // Methode 3: Fallback mit Link (für Android)
-                setTimeout(() => {
-                    const link = document.createElement('a');
-                    link.href = deepLink;
-                    link.style.display = 'none';
-                    document.body.appendChild(link);
-                    link.click();
-                    document.body.removeChild(link);
-                }, 1000);
-                
-                // Nach 3 Sekunden zum App Store falls App nicht geöffnet wurde
-                setTimeout(() => {
-                    const appStoreLink = "https://apps.apple.com/app/globalcontainer";
+                    
+                    // Nach 3 Sekunden zum App Store falls App nicht geöffnet wurde
+                    setTimeout(() => {
+                        window.location.href = appStoreLink;
+                    }, 3000);
+                    
+                } catch (error) {
+                    console.log('Deep link error:', error);
+                    // Bei Fehler direkt zum App Store
                     window.location.href = appStoreLink;
-                }, 3000);
+                }
                 
             } else {
                 // Desktop: Zeige Erfolgsmeldung und leite zur Landing Page weiter
