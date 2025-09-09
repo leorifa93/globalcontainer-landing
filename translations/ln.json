@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "title": "GlobalContainer - Kotinda ya Kobomba tí Afrika",
+    "description": "Kangola na ba transporteurs ya kobomba mpe tinda biloko na yo na nzela ya kobomba tí Afrika. Ntalo ya polele, kolanda na tango ya solo mpe mbongo ya kobomba.",
+    "lang": "ln"
+  },
+  "navigation": {
+    "features": "Bisálá",
+    "howItWorks": "Ndenge ya kosala",
+    "pricing": "Ntalo",
+    "contact": "Kangola",
+    "login": "Kokɔta",
+    "downloadApp": "Kotonga App"
+  },
+  "hero": {
+    "title": "Kotinda ya Kobomba tí",
+    "titleHighlight": "Afrika",
+    "subtitle": "Kangola na ba transporteurs ya kobomba mpe tinda biloko na yo na nzela ya kobomba. Ntalo ya polele, kolanda na tango ya solo mpe mbongo ya kobomba.",
+    "downloadApp": "Kotonga App",
+    "learnMore": "Koyeba mingi",
+    "stats": {
+      "successfulTransports": "Ba Transports ya Malamu",
+      "verifiedPartners": "Ba Partenaires ya Esimbami",
+      "satisfactionRate": "Ndenge ya Koyoka Malamu"
+    }
+  },
+  "features": {
+    "title": "Mpo na nini GlobalContainer?",
+    "subtitle": "Tosalaka transport tí Afrika na nzela ya pétépété, ya kobomba mpe ya polele",
+    "trustedPartners": {
+      "title": "Ba Partenaires ya Kobomba",
+      "description": "Ba partenaires na biso nyonso ya transport esalelami na nzela ya pétépété mpe bapesami note. Biloko na yo bizali na maboko ya kobomba."
+    },
+    "transparentPricing": {
+      "title": "Ntalo ya Polele",
+      "description": "Mona ntalo nyonso na liboso mpe pona ntalo ya malamu mpo na transport na yo. Mbongo ya kobomba te."
+    },
+    "realTimeTracking": {
+      "title": "Kolanda na Tango ya Solo",
+      "description": "Landa état ya transport na yo na tango ya solo mpe zua sango ya makomi ya motuya."
+    },
+    "securePayments": {
+      "title": "Mbongo ya Kobomba",
+      "description": "Futá na nzela ya kobomba na PayPal to karte ya mbongo. Mbongo na yo esalelami tí kozua malamu."
+    },
+    "allAfrica": {
+      "title": "Afrika Nyonso",
+      "description": "Kowuta Allemagne tí Afrika nyonso. Zua ba transports tí esika ozali kolinga."
+    },
+    "ratingSystem": {
+      "title": "Système ya Note",
+      "description": "Pesa note ya makambo na yo mpe salisa bato mosusu pona kozwa ba partenaires ya transport ya malamu."
+    }
+  },
+  "howItWorks": {
+    "title": "Ndenge ya kosala",
+    "subtitle": "Na ba étapes moko moko tí transport na yo ya kobomba",
+    "step1": {
+      "title": "Kosala to koluka ba offres",
+      "description": "Sala offre ya transport to luka ba transports ezali mpo na esika ozali kolinga."
+    },
+    "step2": {
+      "title": "Kozua ba partenaires",
+      "description": "Zua partenaire ya transport ya malamu na nzela ya système na biso ya kokangola mpe ba profils ya note."
+    },
+    "step3": {
+      "title": "Kofutá na nzela ya kobomba",
+      "description": "Futá na nzela ya kobomba na PayPal to karte ya mbongo. Mbongo na yo esalelami tí kozua malamu."
+    },
+    "step4": {
+      "title": "Kolanda transport",
+      "description": "Landa transport na yo na tango ya solo mpe zua sango ya état ya eloko na yo."
+    }
+  },
+  "pricing": {
+    "title": "Ntalo ya Polele",
+    "subtitle": "Mbongo ya kobomba te - ozali kotala ntango nyonso oyo ofutá",
+    "serviceFee": "Mbongo ya Mosala",
+    "transportPrice": "Ntalo ya Transport",
+    "serviceFeePercent": "Mbongo ya Mosala (19%)",
+    "totalPrice": "Ntalo ya Nsuka",
+    "note": "💡 Mbongo ya mosala ezali mpo na mbongo nyonso ya plateforme, kosala mbongo mpe salisa ba clients."
+  },
+  "cta": {
+    "title": "Ozali koyebana na kobanda?",
+    "subtitle": "Tonga application GlobalContainer mpe banda transport ya kobomba tí Afrika lelo.",
+    "downloadApp": "Kotonga App",
+    "contact": "Kangola na biso"
+  },
+  "footer": {
+    "description": "Partenaire na yo ya kobomba mpo na transport ya kobomba tí Afrika.",
+    "app": "App",
+    "download": "Kotonga",
+    "features": "Bisálá",
+    "pricing": "Ntalo",
+    "support": "Salisa",
+    "contact": "Kangola",
+    "faq": "Mituna",
+    "supportEmail": "Salisa",
+    "legal": "Mibeko",
+    "terms": "Ba Conditions",
+    "privacy": "Bokomi ya Moto",
+    "imprint": "Ba Informations",
+    "copyright": "© 2025 GlobalContainer. Ba droits nyonso esalelami."
+  },
+  "comingSoon": {
+    "title": "🚛 Application GlobalContainer",
+    "message": "Application ekokoma ezali na nsima!",
+    "subtitle": "Kanga na sango mpe landa biso mpo na ba mises à jour.",
+    "thanks": "Tosepeli mpo na intérêt na yo!"
+  },
+  "appPreview": {
+    "title": "🚛 GlobalContainer",
+    "subtitle": "Ba Offres ya Transport",
+    "transportDate": "Transport na"
+  }
+}

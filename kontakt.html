@@ -26,13 +26,19 @@
                 <span class="nav-title">GlobalContainer</span>
             </div>
             <div class="nav-links">
-                <a href="index.html" class="nav-link">Startseite</a>
-                <a href="index.html#features" class="nav-link">Features</a>
-                <a href="index.html#pricing" class="nav-link">Preise</a>
-                <a href="kontakt.html" class="nav-link active">Kontakt</a>
+                <a href="index.html" class="nav-link" data-i18n="navigation.home">Startseite</a>
+                <a href="index.html#features" class="nav-link" data-i18n="navigation.features">Features</a>
+                <a href="index.html#pricing" class="nav-link" data-i18n="navigation.pricing">Preise</a>
+                <a href="kontakt.html" class="nav-link active" data-i18n="navigation.contact">Kontakt</a>
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="de" onclick="changeLanguage('de')">DE</button>
+                    <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+                    <button class="lang-btn" data-lang="fr" onclick="changeLanguage('fr')">FR</button>
+                    <button class="lang-btn" data-lang="ln" onclick="changeLanguage('ln')">LN</button>
+                </div>
             </div>
             <div class="nav-actions">
-                <a href="#" class="btn btn-outline" onclick="showComingSoon()">App herunterladen</a>
+                <a href="#" class="btn btn-outline" onclick="showComingSoon()" data-i18n="navigation.downloadApp">App herunterladen</a>
             </div>
             <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
         </div>
@@ -41,14 +47,20 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-menu-close" id="mobileMenuClose">×</button>
+        <div class="mobile-language-switcher">
+            <button class="lang-btn active" data-lang="de" onclick="changeLanguage('de')">DE</button>
+            <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+            <button class="lang-btn" data-lang="fr" onclick="changeLanguage('fr')">FR</button>
+            <button class="lang-btn" data-lang="ln" onclick="changeLanguage('ln')">LN</button>
+        </div>
         <div class="mobile-menu-links">
-            <a href="index.html" class="mobile-menu-link">Startseite</a>
-            <a href="index.html#features" class="mobile-menu-link">Features</a>
-            <a href="index.html#pricing" class="mobile-menu-link">Preise</a>
-            <a href="kontakt.html" class="mobile-menu-link active">Kontakt</a>
-            <a href="agb.html" class="mobile-menu-link">AGB</a>
-            <a href="datenschutz.html" class="mobile-menu-link">Datenschutz</a>
-            <a href="impressum.html" class="mobile-menu-link">Impressum</a>
+            <a href="index.html" class="mobile-menu-link" data-i18n="navigation.home">Startseite</a>
+            <a href="index.html#features" class="mobile-menu-link" data-i18n="navigation.features">Features</a>
+            <a href="index.html#pricing" class="mobile-menu-link" data-i18n="navigation.pricing">Preise</a>
+            <a href="kontakt.html" class="mobile-menu-link active" data-i18n="navigation.contact">Kontakt</a>
+            <a href="agb.html" class="mobile-menu-link" data-i18n="footer.terms">AGB</a>
+            <a href="datenschutz.html" class="mobile-menu-link" data-i18n="footer.privacy">Datenschutz</a>
+            <a href="impressum.html" class="mobile-menu-link" data-i18n="footer.imprint">Impressum</a>
         </div>
     </div>
 
@@ -56,8 +68,8 @@
     <section class="contact-hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Kontakt</h1>
-                <p class="hero-subtitle">
+                <h1 class="hero-title" data-i18n="navigation.contact">Kontakt</h1>
+                <p class="hero-subtitle" data-i18n="contact.hero.subtitle">
                     Hast du Fragen zu GlobalContainer? Wir helfen dir gerne weiter!
                 </p>
             </div>
@@ -71,34 +83,34 @@
                 <!-- Contact Form -->
                 <div class="contact-form-container">
                     <div class="contact-form-card">
-                        <h2 class="form-title">Nachricht senden</h2>
-                        <p class="form-subtitle">Sende uns eine Nachricht und wir melden uns schnellstmöglich bei dir.</p>
+                        <h2 class="form-title" data-i18n="contact.form.title">Nachricht senden</h2>
+                        <p class="form-subtitle" data-i18n="contact.form.subtitle">Sende uns eine Nachricht und wir melden uns schnellstmöglich bei dir.</p>
                         
                         <form class="contact-form" id="contactForm">
                             <div class="form-group">
-                                <label for="name" class="form-label">Name *</label>
+                                <label for="name" class="form-label" data-i18n="contact.form.name">Name *</label>
                                 <input type="text" id="name" name="name" class="form-input" required>
                             </div>
                             
                             <div class="form-group">
-                                <label for="email" class="form-label">E-Mail *</label>
+                                <label for="email" class="form-label" data-i18n="contact.form.email">E-Mail *</label>
                                 <input type="email" id="email" name="email" class="form-input" required>
                             </div>
                             
                             <div class="form-group">
-                                <label for="subject" class="form-label">Betreff *</label>
+                                <label for="subject" class="form-label" data-i18n="contact.form.subject">Betreff *</label>
                                 <select id="subject" name="subject" class="form-select" required>
-                                    <option value="">Bitte wählen...</option>
-                                    <option value="general">Allgemeine Anfrage</option>
-                                    <option value="support">Technischer Support</option>
-                                    <option value="business">Geschäftspartnerschaft</option>
-                                    <option value="press">Presse & Medien</option>
-                                    <option value="other">Sonstiges</option>
+                                    <option value="" data-i18n="contact.form.subjectPlaceholder">Bitte wählen...</option>
+                                    <option value="general" data-i18n="contact.form.general">Allgemeine Anfrage</option>
+                                    <option value="support" data-i18n="contact.form.support">Technischer Support</option>
+                                    <option value="business" data-i18n="contact.form.business">Geschäftspartnerschaft</option>
+                                    <option value="press" data-i18n="contact.form.press">Presse & Medien</option>
+                                    <option value="other" data-i18n="contact.form.other">Sonstiges</option>
                                 </select>
                             </div>
                             
                             <div class="form-group">
-                                <label for="message" class="form-label">Nachricht *</label>
+                                <label for="message" class="form-label" data-i18n="contact.form.message">Nachricht *</label>
                                 <textarea id="message" name="message" class="form-textarea" rows="6" required placeholder="Beschreibe dein Anliegen..."></textarea>
                             </div>
                             
@@ -109,7 +121,7 @@
                                 </label>
                             </div>
                             
-                            <button type="submit" class="btn btn-primary btn-large form-submit">
+                            <button type="submit" class="btn btn-primary btn-large form-submit" data-i18n="contact.form.submit">
                                 <span class="btn-icon">📧</span>
                                 Nachricht senden
                             </button>
@@ -120,15 +132,15 @@
                 <!-- Contact Info -->
                 <div class="contact-info-container">
                     <div class="contact-info-card">
-                        <h2 class="info-title">Kontaktinformationen</h2>
-                        <p class="info-subtitle">Erreiche uns über verschiedene Kanäle</p>
+                        <h2 class="info-title" data-i18n="contact.info.title">Kontaktinformationen</h2>
+                        <p class="info-subtitle" data-i18n="contact.info.subtitle">Erreiche uns über verschiedene Kanäle</p>
                         
                         <div class="contact-methods">
                             <div class="contact-method">
                                 <div class="method-icon">📧</div>
                                 <div class="method-content">
-                                    <h3 class="method-title">E-Mail</h3>
-                                    <p class="method-description">Schreibe uns eine E-Mail</p>
+                                    <h3 class="method-title" data-i18n="contact.info.email">E-Mail</h3>
+                                    <p class="method-description" data-i18n="contact.info.emailDesc">Schreibe uns eine E-Mail</p>
                                     <a href="mailto:info@globalcontainer.com" class="method-link">info@globalcontainer.com</a>
                                 </div>
                             </div>
@@ -136,8 +148,8 @@
                             <div class="contact-method">
                                 <div class="method-icon">📞</div>
                                 <div class="method-content">
-                                    <h3 class="method-title">Telefon</h3>
-                                    <p class="method-description">Rufe uns an</p>
+                                    <h3 class="method-title" data-i18n="contact.info.phone">Telefon</h3>
+                                    <p class="method-description" data-i18n="contact.info.phoneDesc">Rufe uns an</p>
                                     <a href="tel:+4940123456789" class="method-link">+49 40 123 456 789</a>
                                 </div>
                             </div>
@@ -153,41 +165,41 @@
     <section class="faq-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Häufige Fragen</h2>
-                <p class="section-subtitle">
+                <h2 class="section-title" data-i18n="faq.title">Häufige Fragen</h2>
+                <p class="section-subtitle" data-i18n="faq.subtitle">
                     Antworten auf die wichtigsten Fragen zu GlobalContainer
                 </p>
             </div>
             
             <div class="faq-grid">
                 <div class="faq-item">
-                    <h3 class="faq-question">Wie funktioniert die App?</h3>
-                    <p class="faq-answer">GlobalContainer verbindet Transportanbieter mit Suchenden. Du kannst entweder Transportplatz anbieten oder nach verfügbaren Transporten suchen. Die App vermittelt den Kontakt und übernimmt die sichere Zahlungsabwicklung.</p>
+                    <h3 class="faq-question" data-i18n="faq.q1.question">Wie funktioniert die App?</h3>
+                    <p class="faq-answer" data-i18n="faq.q1.answer">GlobalContainer verbindet Transportanbieter mit Suchenden. Du kannst entweder Transportplatz anbieten oder nach verfügbaren Transporten suchen. Die App vermittelt den Kontakt und übernimmt die sichere Zahlungsabwicklung.</p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3 class="faq-question">Was kostet die Nutzung?</h3>
-                    <p class="faq-answer">Die App ist kostenlos zu nutzen. Wir erheben eine Service-Gebühr von 19% auf den Transportpreis, die alle Plattform-Kosten, Zahlungsabwicklung und Support abdeckt.</p>
+                    <h3 class="faq-question" data-i18n="faq.q2.question">Was kostet die Nutzung?</h3>
+                    <p class="faq-answer" data-i18n="faq.q2.answer">Die App ist kostenlos zu nutzen. Wir erheben eine Service-Gebühr von 19% auf den Transportpreis, die alle Plattform-Kosten, Zahlungsabwicklung und Support abdeckt.</p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3 class="faq-question">Wie sicher ist die Zahlung?</h3>
-                    <p class="faq-answer">Alle Zahlungen werden über Stripe abgewickelt, einen der führenden Zahlungsanbieter weltweit. Dein Geld ist geschützt bis zur erfolgreichen Lieferung.</p>
+                    <h3 class="faq-question" data-i18n="faq.q3.question">Wie sicher ist die Zahlung?</h3>
+                    <p class="faq-answer" data-i18n="faq.q3.answer">Alle Zahlungen werden über Stripe abgewickelt, einen der führenden Zahlungsanbieter weltweit. Dein Geld ist geschützt bis zur erfolgreichen Lieferung.</p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3 class="faq-question">Welche Länder werden bedient?</h3>
-                    <p class="faq-answer">Wir vermitteln Transporte von Deutschland nach ganz Afrika. Du kannst spezifische Zielländer in der App auswählen und nach verfügbaren Routen suchen.</p>
+                    <h3 class="faq-question" data-i18n="faq.q4.question">Welche Länder werden bedient?</h3>
+                    <p class="faq-answer" data-i18n="faq.q4.answer">Wir vermitteln Transporte von Deutschland nach ganz Afrika. Du kannst spezifische Zielländer in der App auswählen und nach verfügbaren Routen suchen.</p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3 class="faq-question">Wie kann ich Transportpartner bewerten?</h3>
-                    <p class="faq-answer">Nach jedem abgeschlossenen Transport kannst du deinen Transportpartner bewerten. Das Bewertungssystem hilft anderen Nutzern bei der Auswahl vertrauenswürdiger Partner.</p>
+                    <h3 class="faq-question" data-i18n="faq.q5.question">Wie kann ich Transportpartner bewerten?</h3>
+                    <p class="faq-answer" data-i18n="faq.q5.answer">Nach jedem abgeschlossenen Transport kannst du deinen Transportpartner bewerten. Das Bewertungssystem hilft anderen Nutzern bei der Auswahl vertrauenswürdiger Partner.</p>
                 </div>
                 
                 <div class="faq-item">
-                    <h3 class="faq-question">Gibt es eine mobile App?</h3>
-                    <p class="faq-answer">Ja! GlobalContainer ist als mobile App für iOS und Android verfügbar. Du kannst sie kostenlos im App Store oder Google Play Store herunterladen.</p>
+                    <h3 class="faq-question" data-i18n="faq.q6.question">Gibt es eine mobile App?</h3>
+                    <p class="faq-answer" data-i18n="faq.q6.answer">Ja! GlobalContainer ist als mobile App für iOS und Android verfügbar. Du kannst sie kostenlos im App Store oder Google Play Store herunterladen.</p>
                 </div>
             </div>
         </div>
@@ -197,16 +209,16 @@
     <section class="cta">
         <div class="container">
             <div class="cta-content">
-                <h2 class="cta-title">Bereit zu starten?</h2>
-                <p class="cta-subtitle">
+                <h2 class="cta-title" data-i18n="cta.title">Bereit zu starten?</h2>
+                <p class="cta-subtitle" data-i18n="cta.subtitle">
                     Lade die GlobalContainer App herunter und beginne noch heute mit sicheren Transporten nach Afrika.
                 </p>
                 <div class="cta-actions">
-                    <a href="#" class="btn btn-primary btn-large" onclick="showComingSoon()">
+                    <a href="#" class="btn btn-primary btn-large" onclick="showComingSoon()" data-i18n="cta.downloadApp">
                         <span class="btn-icon">📱</span>
                         App herunterladen
                     </a>
-                    <a href="mailto:info@globalcontainer.com" class="btn btn-outline btn-large">
+                    <a href="mailto:info@globalcontainer.com" class="btn btn-outline btn-large" data-i18n="contact.cta.email">
                         <span class="btn-icon">📧</span>
                         E-Mail senden
                     </a>
@@ -224,34 +236,34 @@
                         <img src="logo-small.png" alt="GlobalContainer" class="footer-icon">
                         <span class="footer-title">GlobalContainer</span>
                     </div>
-                    <p class="footer-description">
+                    <p class="footer-description" data-i18n="footer.description">
                         Dein zuverlässiger Partner für sichere Transporte nach Afrika.
                     </p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-column">
-                        <h4 class="footer-heading">App</h4>
-                        <a href="index.html" class="footer-link">Startseite</a>
-                        <a href="index.html#features" class="footer-link">Features</a>
-                        <a href="index.html#pricing" class="footer-link">Preise</a>
-                        <a href="kontakt.html" class="footer-link">Kontakt</a>
+                        <h4 class="footer-heading" data-i18n="footer.app">App</h4>
+                        <a href="index.html" class="footer-link" data-i18n="navigation.home">Startseite</a>
+                        <a href="index.html#features" class="footer-link" data-i18n="navigation.features">Features</a>
+                        <a href="index.html#pricing" class="footer-link" data-i18n="navigation.pricing">Preise</a>
+                        <a href="kontakt.html" class="footer-link" data-i18n="navigation.contact">Kontakt</a>
                     </div>
                     <div class="footer-column">
-                        <h4 class="footer-heading">Support</h4>
-                        <a href="mailto:support@globalcontainer.com" class="footer-link">Support</a>
-                        <a href="kontakt.html" class="footer-link">Kontakt</a>
-                        <a href="kontakt.html" class="footer-link">FAQ</a>
+                        <h4 class="footer-heading" data-i18n="footer.support">Support</h4>
+                        <a href="mailto:support@globalcontainer.com" class="footer-link" data-i18n="footer.supportEmail">Support</a>
+                        <a href="kontakt.html" class="footer-link" data-i18n="navigation.contact">Kontakt</a>
+                        <a href="kontakt.html" class="footer-link" data-i18n="footer.faq">FAQ</a>
                     </div>
                     <div class="footer-column">
-                        <h4 class="footer-heading">Rechtliches</h4>
-                        <a href="agb.html" class="footer-link">AGB</a>
-                        <a href="datenschutz.html" class="footer-link">Datenschutz</a>
-                        <a href="impressum.html" class="footer-link">Impressum</a>
+                        <h4 class="footer-heading" data-i18n="footer.legal">Rechtliches</h4>
+                        <a href="agb.html" class="footer-link" data-i18n="footer.terms">AGB</a>
+                        <a href="datenschutz.html" class="footer-link" data-i18n="footer.privacy">Datenschutz</a>
+                        <a href="impressum.html" class="footer-link" data-i18n="footer.imprint">Impressum</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="footer-copyright">
+                <p class="footer-copyright" data-i18n="footer.copyright">
                     © 2025 GlobalContainer. Alle Rechte vorbehalten.
                 </p>
             </div>
@@ -303,6 +315,7 @@
             }
         });
     </script>
+    <script src="language-switcher.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

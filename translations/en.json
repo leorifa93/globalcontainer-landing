@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "title": "GlobalContainer - Secure Transport to Africa",
+    "description": "Connect with trusted transporters and ship your goods safely and reliably to Africa. Transparent pricing, real-time tracking and secure payments.",
+    "lang": "en"
+  },
+  "navigation": {
+    "features": "Features",
+    "howItWorks": "How it Works",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "login": "Login",
+    "downloadApp": "Download App"
+  },
+  "hero": {
+    "title": "Secure Transport to",
+    "titleHighlight": "Africa",
+    "subtitle": "Connect with trusted transporters and ship your goods safely and reliably. Transparent pricing, real-time tracking and secure payments.",
+    "downloadApp": "Download App",
+    "learnMore": "Learn More",
+    "stats": {
+      "successfulTransports": "Successful Transports",
+      "verifiedPartners": "Verified Partners",
+      "satisfactionRate": "Satisfaction Rate"
+    }
+  },
+  "features": {
+    "title": "Why GlobalContainer?",
+    "subtitle": "We make transport to Africa simple, safe and transparent",
+    "trustedPartners": {
+      "title": "Trusted Partners",
+      "description": "All our transport partners are carefully vetted and rated. Your goods are in safe hands."
+    },
+    "transparentPricing": {
+      "title": "Transparent Pricing",
+      "description": "See all costs at a glance and choose the best price for your transport. No hidden fees."
+    },
+    "realTimeTracking": {
+      "title": "Real-time Tracking",
+      "description": "Track your transport status in real-time and receive notifications about important updates."
+    },
+    "securePayments": {
+      "title": "Secure Payments",
+      "description": "Pay safely with PayPal or credit card. Your money is protected until successful delivery."
+    },
+    "allAfrica": {
+      "title": "All Africa",
+      "description": "From Germany to all of Africa. Find transports to your desired destination."
+    },
+    "ratingSystem": {
+      "title": "Rating System",
+      "description": "Rate your experiences and help others choose the best transport partners."
+    }
+  },
+  "howItWorks": {
+    "title": "How it Works",
+    "subtitle": "In just a few steps to your secure transport",
+    "step1": {
+      "title": "Create or search for offers",
+      "description": "Create a transport offer or search for available transports to your desired destination."
+    },
+    "step2": {
+      "title": "Find partners",
+      "description": "Find the right transport partner through our matching system and rated profiles."
+    },
+    "step3": {
+      "title": "Pay securely",
+      "description": "Pay safely with PayPal or credit card. Your money is protected until delivery."
+    },
+    "step4": {
+      "title": "Track transport",
+      "description": "Track your transport in real-time and receive updates about your shipment status."
+    }
+  },
+  "pricing": {
+    "title": "Transparent Pricing",
+    "subtitle": "No hidden costs - you always see what you pay",
+    "serviceFee": "Service Fee",
+    "transportPrice": "Transport Price",
+    "serviceFeePercent": "Service Fee (19%)",
+    "totalPrice": "Total Price",
+    "note": "💡 The service fee covers all platform costs, payment processing and customer support."
+  },
+  "cta": {
+    "title": "Ready to start?",
+    "subtitle": "Download the GlobalContainer app and start secure transport to Africa today.",
+    "downloadApp": "Download App",
+    "contact": "Get in Touch"
+  },
+  "footer": {
+    "description": "Your reliable partner for secure transport to Africa.",
+    "app": "App",
+    "download": "Download",
+    "features": "Features",
+    "pricing": "Pricing",
+    "support": "Support",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "supportEmail": "Support",
+    "legal": "Legal",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "imprint": "Imprint",
+    "copyright": "© 2025 GlobalContainer. All rights reserved."
+  },
+  "comingSoon": {
+    "title": "🚛 GlobalContainer App",
+    "message": "The app will be available soon!",
+    "subtitle": "Stay tuned and follow us for updates.",
+    "thanks": "Thank you for your interest!"
+  },
+  "appPreview": {
+    "title": "🚛 GlobalContainer",
+    "subtitle": "Transport Offers",
+    "transportDate": "Transport on"
+  }
+}

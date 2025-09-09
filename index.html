@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GlobalContainer - Sichere Transporte nach Afrika</title>
-    <meta name="description" content="Verbinde dich mit vertrauenswürdigen Transporteuren und verschicke deine Güter sicher und zuverlässig nach Afrika. Transparente Preise, Echtzeit-Tracking und sichere Zahlungen.">
+    <title data-i18n="meta.title">GlobalContainer - Sichere Transporte nach Afrika</title>
+    <meta name="description" data-i18n="meta.description" content="Verbinde dich mit vertrauenswürdigen Transporteuren und verschicke deine Güter sicher und zuverlässig nach Afrika. Transparente Preise, Echtzeit-Tracking und sichere Zahlungen.">
     <meta name="theme-color" content="#A0522D">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,14 +28,21 @@
                 <span class="nav-title">GlobalContainer</span>
             </div>
             <div class="nav-links">
-                <a href="#features" class="nav-link">Features</a>
-                <a href="#how-it-works" class="nav-link">So funktioniert's</a>
-                <a href="#pricing" class="nav-link">Preise</a>
-                <a href="kontakt.html" class="nav-link">Kontakt</a>
+                <a href="#features" class="nav-link" data-i18n="navigation.features">Features</a>
+                <a href="#how-it-works" class="nav-link" data-i18n="navigation.howItWorks">So funktioniert's</a>
+                <a href="#pricing" class="nav-link" data-i18n="navigation.pricing">Preise</a>
+                <a href="kontakt.html" class="nav-link" data-i18n="navigation.contact">Kontakt</a>
             </div>
             <div class="nav-actions">
-                <a href="#" class="btn btn-outline">Anmelden</a>
-                <a href="#" class="btn btn-primary" onclick="showComingSoon()">App herunterladen</a>
+                <!-- Language Switcher -->
+                <div class="language-switcher">
+                    <button class="lang-btn active" data-lang="de" onclick="changeLanguage('de')">DE</button>
+                    <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+                    <button class="lang-btn" data-lang="fr" onclick="changeLanguage('fr')">FR</button>
+                    <button class="lang-btn" data-lang="ln" onclick="changeLanguage('ln')">LN</button>
+                </div>
+                <a href="#" class="btn btn-outline" data-i18n="navigation.login">Anmelden</a>
+                <a href="#" class="btn btn-primary" onclick="showComingSoon()" data-i18n="navigation.downloadApp">App herunterladen</a>
             </div>
             <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
         </div>
@@ -45,16 +52,23 @@
     <div class="mobile-menu" id="mobileMenu">
         <button class="mobile-menu-close" id="mobileMenuClose">×</button>
         <div class="mobile-menu-links">
-            <a href="#features" class="mobile-menu-link">Features</a>
-            <a href="#how-it-works" class="mobile-menu-link">So funktioniert's</a>
-            <a href="#pricing" class="mobile-menu-link">Preise</a>
-            <a href="kontakt.html" class="mobile-menu-link">Kontakt</a>
-            <a href="agb.html" class="mobile-menu-link">AGB</a>
-            <a href="datenschutz.html" class="mobile-menu-link">Datenschutz</a>
-            <a href="impressum.html" class="mobile-menu-link">Impressum</a>
+            <a href="#features" class="mobile-menu-link" data-i18n="navigation.features">Features</a>
+            <a href="#how-it-works" class="mobile-menu-link" data-i18n="navigation.howItWorks">So funktioniert's</a>
+            <a href="#pricing" class="mobile-menu-link" data-i18n="navigation.pricing">Preise</a>
+            <a href="kontakt.html" class="mobile-menu-link" data-i18n="navigation.contact">Kontakt</a>
+            <a href="#" class="mobile-menu-link legal-link" data-legal="terms" data-i18n="footer.terms">AGB</a>
+            <a href="#" class="mobile-menu-link legal-link" data-legal="privacy" data-i18n="footer.privacy">Datenschutz</a>
+            <a href="#" class="mobile-menu-link legal-link" data-legal="imprint" data-i18n="footer.imprint">Impressum</a>
         </div>
         <div class="mobile-menu-actions">
-            <a href="#" class="btn btn-outline btn-large">Anmelden</a>
+            <!-- Mobile Language Switcher -->
+            <div class="mobile-language-switcher">
+                <button class="lang-btn active" data-lang="de" onclick="changeLanguage('de')">DE</button>
+                <button class="lang-btn" data-lang="en" onclick="changeLanguage('en')">EN</button>
+                <button class="lang-btn" data-lang="fr" onclick="changeLanguage('fr')">FR</button>
+                <button class="lang-btn" data-lang="ln" onclick="changeLanguage('ln')">LN</button>
+            </div>
+            <a href="#" class="btn btn-outline btn-large" data-i18n="navigation.login">Anmelden</a>
         </div>
     </div>
 
@@ -63,33 +77,33 @@
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-title">
-                    Sichere Transporte nach <span class="text-gradient">Afrika</span>
+                    <span data-i18n="hero.title">Sichere Transporte nach</span> <span class="text-gradient" data-i18n="hero.titleHighlight">Afrika</span>
                 </h1>
-                <p class="hero-subtitle">
+                <p class="hero-subtitle" data-i18n="hero.subtitle">
                     Verbinde dich mit vertrauenswürdigen Transporteuren und verschicke deine Güter sicher und zuverlässig. Transparente Preise, Echtzeit-Tracking und sichere Zahlungen.
                 </p>
                 <div class="hero-actions">
                     <a href="#" class="btn btn-primary btn-large" onclick="showComingSoon()">
                         <span class="btn-icon">📱</span>
-                        App herunterladen
+                        <span data-i18n="hero.downloadApp">App herunterladen</span>
                     </a>
                     <a href="#how-it-works" class="btn btn-outline btn-large">
                         <span class="btn-icon">▶️</span>
-                        Mehr erfahren
+                        <span data-i18n="hero.learnMore">Mehr erfahren</span>
                     </a>
                 </div>
                 <div class="hero-stats">
                     <div class="stat">
                         <div class="stat-number">500+</div>
-                        <div class="stat-label">Erfolgreiche Transporte</div>
+                        <div class="stat-label" data-i18n="hero.stats.successfulTransports">Erfolgreiche Transporte</div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">50+</div>
-                        <div class="stat-label">Verifizierte Partner</div>
+                        <div class="stat-label" data-i18n="hero.stats.verifiedPartners">Verifizierte Partner</div>
                     </div>
                     <div class="stat">
                         <div class="stat-number">99%</div>
-                        <div class="stat-label">Zufriedenheitsrate</div>
+                        <div class="stat-label" data-i18n="hero.stats.satisfactionRate">Zufriedenheitsrate</div>
                     </div>
                 </div>
             </div>
@@ -98,8 +112,8 @@
                     <div class="phone-screen">
                         <div class="app-preview">
                             <div class="app-header">
-                                <div class="app-title">🚛 GlobalContainer</div>
-                                <div class="app-subtitle">Transport-Angebote</div>
+                                <div class="app-title" data-i18n="appPreview.title">🚛 GlobalContainer</div>
+                                <div class="app-subtitle" data-i18n="appPreview.subtitle">Transport-Angebote</div>
                             </div>
                             <div class="app-content">
                                 <div class="listing-card">
@@ -109,7 +123,7 @@
                                         <span class="to">Kinshasa</span>
                                     </div>
                                     <div class="listing-price">€15.50/m²</div>
-                                    <div class="listing-date">Transport am 15.10.2025</div>
+                                    <div class="listing-date"><span data-i18n="appPreview.transportDate">Transport am</span> 15.10.2025</div>
                                 </div>
                                 <div class="listing-card">
                                     <div class="listing-route">
@@ -118,7 +132,7 @@
                                         <span class="to">Lagos</span>
                                     </div>
                                     <div class="listing-price">€12.80/m²</div>
-                                    <div class="listing-date">Transport am 22.10.2025</div>
+                                    <div class="listing-date"><span data-i18n="appPreview.transportDate">Transport am</span> 22.10.2025</div>
                                 </div>
                             </div>
                         </div>
@@ -132,51 +146,51 @@
     <section id="features" class="features">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Warum GlobalContainer?</h2>
-                <p class="section-subtitle">
+                <h2 class="section-title" data-i18n="features.title">Warum GlobalContainer?</h2>
+                <p class="section-subtitle" data-i18n="features.subtitle">
                     Wir machen Transporte nach Afrika einfach, sicher und transparent
                 </p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">🛡️</div>
-                    <h3 class="feature-title">Vertrauenswürdige Partner</h3>
-                    <p class="feature-description">
+                    <h3 class="feature-title" data-i18n="features.trustedPartners.title">Vertrauenswürdige Partner</h3>
+                    <p class="feature-description" data-i18n="features.trustedPartners.description">
                         Alle unsere Transportpartner werden sorgfältig geprüft und bewertet. Deine Güter sind in sicheren Händen.
                     </p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">💰</div>
-                    <h3 class="feature-title">Transparente Preise</h3>
-                    <p class="feature-description">
+                    <h3 class="feature-title" data-i18n="features.transparentPricing.title">Transparente Preise</h3>
+                    <p class="feature-description" data-i18n="features.transparentPricing.description">
                         Sieh alle Kosten auf einen Blick und wähle den besten Preis für deinen Transport. Keine versteckten Gebühren.
                     </p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">📍</div>
-                    <h3 class="feature-title">Echtzeit-Tracking</h3>
-                    <p class="feature-description">
+                    <h3 class="feature-title" data-i18n="features.realTimeTracking.title">Echtzeit-Tracking</h3>
+                    <p class="feature-description" data-i18n="features.realTimeTracking.description">
                         Verfolge den Status deines Transports in Echtzeit und erhalte Benachrichtigungen über wichtige Updates.
                     </p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">💳</div>
-                    <h3 class="feature-title">Sichere Zahlungen</h3>
-                    <p class="feature-description">
+                    <h3 class="feature-title" data-i18n="features.securePayments.title">Sichere Zahlungen</h3>
+                    <p class="feature-description" data-i18n="features.securePayments.description">
                         Bezahle sicher mit PayPal oder Kreditkarte. Dein Geld ist geschützt bis zur erfolgreichen Lieferung.
                     </p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🌍</div>
-                    <h3 class="feature-title">Ganz Afrika</h3>
-                    <p class="feature-description">
+                    <h3 class="feature-title" data-i18n="features.allAfrica.title">Ganz Afrika</h3>
+                    <p class="feature-description" data-i18n="features.allAfrica.description">
                         Von Deutschland nach ganz Afrika. Finde Transporte zu deinem gewünschten Zielort.
                     </p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">⭐</div>
-                    <h3 class="feature-title">Bewertungssystem</h3>
-                    <p class="feature-description">
+                    <h3 class="feature-title" data-i18n="features.ratingSystem.title">Bewertungssystem</h3>
+                    <p class="feature-description" data-i18n="features.ratingSystem.description">
                         Bewerte deine Erfahrungen und hilf anderen bei der Auswahl der besten Transportpartner.
                     </p>
                 </div>
@@ -188,8 +202,8 @@
     <section id="how-it-works" class="how-it-works">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">So funktioniert's</h2>
-                <p class="section-subtitle">
+                <h2 class="section-title" data-i18n="howItWorks.title">So funktioniert's</h2>
+                <p class="section-subtitle" data-i18n="howItWorks.subtitle">
                     In nur wenigen Schritten zu deinem sicheren Transport
                 </p>
             </div>
@@ -197,8 +211,8 @@
                 <div class="step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h3 class="step-title">Angebot erstellen oder suchen</h3>
-                        <p class="step-description">
+                        <h3 class="step-title" data-i18n="howItWorks.step1.title">Angebot erstellen oder suchen</h3>
+                        <p class="step-description" data-i18n="howItWorks.step1.description">
                             Erstelle ein Transportangebot oder suche nach verfügbaren Transporten zu deinem gewünschten Zielort.
                         </p>
                     </div>
@@ -206,8 +220,8 @@
                 <div class="step">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h3 class="step-title">Partner finden</h3>
-                        <p class="step-description">
+                        <h3 class="step-title" data-i18n="howItWorks.step2.title">Partner finden</h3>
+                        <p class="step-description" data-i18n="howItWorks.step2.description">
                             Finde den passenden Transportpartner durch unser Matching-System und bewertete Profile.
                         </p>
                     </div>
@@ -215,8 +229,8 @@
                 <div class="step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h3 class="step-title">Sicher bezahlen</h3>
-                        <p class="step-description">
+                        <h3 class="step-title" data-i18n="howItWorks.step3.title">Sicher bezahlen</h3>
+                        <p class="step-description" data-i18n="howItWorks.step3.description">
                             Bezahle sicher mit PayPal oder Kreditkarte. Dein Geld ist geschützt bis zur Lieferung.
                         </p>
                     </div>
@@ -224,8 +238,8 @@
                 <div class="step">
                     <div class="step-number">4</div>
                     <div class="step-content">
-                        <h3 class="step-title">Transport verfolgen</h3>
-                        <p class="step-description">
+                        <h3 class="step-title" data-i18n="howItWorks.step4.title">Transport verfolgen</h3>
+                        <p class="step-description" data-i18n="howItWorks.step4.description">
                             Verfolge deinen Transport in Echtzeit und erhalte Updates über den Status deiner Sendung.
                         </p>
                     </div>
@@ -238,33 +252,33 @@
     <section id="pricing" class="pricing">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Transparente Preise</h2>
-                <p class="section-subtitle">
+                <h2 class="section-title" data-i18n="pricing.title">Transparente Preise</h2>
+                <p class="section-subtitle" data-i18n="pricing.subtitle">
                     Keine versteckten Kosten - du siehst immer, was du bezahlst
                 </p>
             </div>
             <div class="pricing-card">
                 <div class="pricing-header">
-                    <h3 class="pricing-title">Service-Gebühr</h3>
+                    <h3 class="pricing-title" data-i18n="pricing.serviceFee">Service-Gebühr</h3>
                     <div class="pricing-percentage">19%</div>
                 </div>
                 <div class="pricing-content">
                     <div class="pricing-item">
-                        <span class="pricing-label">Transport-Preis</span>
+                        <span class="pricing-label" data-i18n="pricing.transportPrice">Transport-Preis</span>
                         <span class="pricing-value">€100.00</span>
                     </div>
                     <div class="pricing-item">
-                        <span class="pricing-label">Service-Gebühr (19%)</span>
+                        <span class="pricing-label" data-i18n="pricing.serviceFeePercent">Service-Gebühr (19%)</span>
                         <span class="pricing-value">€19.00</span>
                     </div>
                     <div class="pricing-divider"></div>
                     <div class="pricing-item pricing-total">
-                        <span class="pricing-label">Gesamtpreis</span>
+                        <span class="pricing-label" data-i18n="pricing.totalPrice">Gesamtpreis</span>
                         <span class="pricing-value">€119.00</span>
                     </div>
                 </div>
                 <div class="pricing-note">
-                    <p>💡 Die Service-Gebühr deckt alle Plattform-Kosten, Zahlungsabwicklung und Kundensupport ab.</p>
+                    <p data-i18n="pricing.note">💡 Die Service-Gebühr deckt alle Plattform-Kosten, Zahlungsabwicklung und Kundensupport ab.</p>
                 </div>
             </div>
         </div>
@@ -274,18 +288,18 @@
     <section class="cta">
         <div class="container">
             <div class="cta-content">
-                <h2 class="cta-title">Bereit zu starten?</h2>
-                <p class="cta-subtitle">
+                <h2 class="cta-title" data-i18n="cta.title">Bereit zu starten?</h2>
+                <p class="cta-subtitle" data-i18n="cta.subtitle">
                     Lade die GlobalContainer App herunter und beginne noch heute mit sicheren Transporten nach Afrika.
                 </p>
                 <div class="cta-actions">
                     <a href="#" class="btn btn-primary btn-large" onclick="showComingSoon()">
                         <span class="btn-icon">📱</span>
-                        App herunterladen
+                        <span data-i18n="cta.downloadApp">App herunterladen</span>
                     </a>
                     <a href="kontakt.html" class="btn btn-outline btn-large">
                         <span class="btn-icon">📧</span>
-                        Kontakt aufnehmen
+                        <span data-i18n="cta.contact">Kontakt aufnehmen</span>
                     </a>
                 </div>
             </div>
@@ -301,33 +315,33 @@
                         <img src="logo-small.png" alt="GlobalContainer" class="footer-icon">
                         <span class="footer-title">GlobalContainer</span>
                     </div>
-                    <p class="footer-description">
+                    <p class="footer-description" data-i18n="footer.description">
                         Dein zuverlässiger Partner für sichere Transporte nach Afrika.
                     </p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-column">
-                        <h4 class="footer-heading">App</h4>
-                        <a href="#" class="footer-link">Herunterladen</a>
-                        <a href="#" class="footer-link">Features</a>
-                        <a href="#" class="footer-link">Preise</a>
+                        <h4 class="footer-heading" data-i18n="footer.app">App</h4>
+                        <a href="#" class="footer-link" data-i18n="footer.download">Herunterladen</a>
+                        <a href="#" class="footer-link" data-i18n="footer.features">Features</a>
+                        <a href="#" class="footer-link" data-i18n="footer.pricing">Preise</a>
                     </div>
                     <div class="footer-column">
-                        <h4 class="footer-heading">Support</h4>
-                        <a href="kontakt.html" class="footer-link">Kontakt</a>
-                        <a href="kontakt.html" class="footer-link">FAQ</a>
-                        <a href="mailto:support@globalcontainer.com" class="footer-link">Support</a>
+                        <h4 class="footer-heading" data-i18n="footer.support">Support</h4>
+                        <a href="kontakt.html" class="footer-link" data-i18n="footer.contact">Kontakt</a>
+                        <a href="kontakt.html" class="footer-link" data-i18n="footer.faq">FAQ</a>
+                        <a href="mailto:support@globalcontainer.com" class="footer-link" data-i18n="footer.supportEmail">Support</a>
                     </div>
                     <div class="footer-column">
-                        <h4 class="footer-heading">Rechtliches</h4>
-                        <a href="agb.html" class="footer-link">AGB</a>
-                        <a href="datenschutz.html" class="footer-link">Datenschutz</a>
-                        <a href="impressum.html" class="footer-link">Impressum</a>
+                        <h4 class="footer-heading" data-i18n="footer.legal">Rechtliches</h4>
+                        <a href="#" class="footer-link legal-link" data-legal="terms" data-i18n="footer.terms">AGB</a>
+                        <a href="#" class="footer-link legal-link" data-legal="privacy" data-i18n="footer.privacy">Datenschutz</a>
+                        <a href="#" class="footer-link legal-link" data-legal="imprint" data-i18n="footer.imprint">Impressum</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="footer-copyright">
+                <p class="footer-copyright" data-i18n="footer.copyright">
                     © 2025 GlobalContainer. Alle Rechte vorbehalten.
                 </p>
             </div>
@@ -337,8 +351,38 @@
     <script>
         // Coming Soon Alert
         function showComingSoon() {
-            alert('🚛 GlobalContainer App\n\nDie App ist in Kürze verfügbar!\n\nBleib auf dem Laufenden und folge uns für Updates.\n\nVielen Dank für dein Interesse!');
+            const currentLang = window.i18n ? window.i18n.getCurrentLanguage() : 'de';
+            const translations = {
+                de: {
+                    title: '🚛 GlobalContainer App',
+                    message: 'Die App ist in Kürze verfügbar!',
+                    subtitle: 'Bleib auf dem Laufenden und folge uns für Updates.',
+                    thanks: 'Vielen Dank für dein Interesse!'
+                },
+                en: {
+                    title: '🚛 GlobalContainer App',
+                    message: 'The app will be available soon!',
+                    subtitle: 'Stay tuned and follow us for updates.',
+                    thanks: 'Thank you for your interest!'
+                },
+                fr: {
+                    title: '🚛 Application GlobalContainer',
+                    message: 'L\'application sera bientôt disponible !',
+                    subtitle: 'Restez à l\'écoute et suivez-nous pour les mises à jour.',
+                    thanks: 'Merci pour votre intérêt !'
+                },
+                ln: {
+                    title: '🚛 Application GlobalContainer',
+                    message: 'Application ekokoma ezali na nsima!',
+                    subtitle: 'Kanga na sango mpe landa biso mpo na ba mises à jour.',
+                    thanks: 'Tosepeli mpo na intérêt na yo!'
+                }
+            };
+            
+            const t = translations[currentLang] || translations.de;
+            alert(`${t.title}\n\n${t.message}\n\n${t.subtitle}\n\n${t.thanks}`);
         }
+
 
         // Mobile Menu Toggle
         document.addEventListener('DOMContentLoaded', function() {
@@ -379,6 +423,7 @@
             }
         });
     </script>
+    <script src="language-switcher.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

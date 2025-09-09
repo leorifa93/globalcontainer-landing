@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "title": "GlobalContainer - Transport Sécurisé vers l'Afrique",
+    "description": "Connectez-vous avec des transporteurs de confiance et expédiez vos marchandises en toute sécurité et fiabilité vers l'Afrique. Tarification transparente, suivi en temps réel et paiements sécurisés.",
+    "lang": "fr"
+  },
+  "navigation": {
+    "features": "Fonctionnalités",
+    "howItWorks": "Comment ça marche",
+    "pricing": "Tarifs",
+    "contact": "Contact",
+    "login": "Connexion",
+    "downloadApp": "Télécharger l'App"
+  },
+  "hero": {
+    "title": "Transport Sécurisé vers",
+    "titleHighlight": "l'Afrique",
+    "subtitle": "Connectez-vous avec des transporteurs de confiance et expédiez vos marchandises en toute sécurité et fiabilité. Tarification transparente, suivi en temps réel et paiements sécurisés.",
+    "downloadApp": "Télécharger l'App",
+    "learnMore": "En savoir plus",
+    "stats": {
+      "successfulTransports": "Transports Réussis",
+      "verifiedPartners": "Partenaires Vérifiés",
+      "satisfactionRate": "Taux de Satisfaction"
+    }
+  },
+  "features": {
+    "title": "Pourquoi GlobalContainer ?",
+    "subtitle": "Nous rendons le transport vers l'Afrique simple, sûr et transparent",
+    "trustedPartners": {
+      "title": "Partenaires de Confiance",
+      "description": "Tous nos partenaires de transport sont soigneusement vérifiés et évalués. Vos marchandises sont entre de bonnes mains."
+    },
+    "transparentPricing": {
+      "title": "Tarification Transparente",
+      "description": "Voyez tous les coûts d'un coup d'œil et choisissez le meilleur prix pour votre transport. Aucun frais caché."
+    },
+    "realTimeTracking": {
+      "title": "Suivi en Temps Réel",
+      "description": "Suivez le statut de votre transport en temps réel et recevez des notifications sur les mises à jour importantes."
+    },
+    "securePayments": {
+      "title": "Paiements Sécurisés",
+      "description": "Payez en toute sécurité avec PayPal ou carte de crédit. Votre argent est protégé jusqu'à la livraison réussie."
+    },
+    "allAfrica": {
+      "title": "Toute l'Afrique",
+      "description": "De l'Allemagne vers toute l'Afrique. Trouvez des transports vers votre destination souhaitée."
+    },
+    "ratingSystem": {
+      "title": "Système d'Évaluation",
+      "description": "Évaluez vos expériences et aidez les autres à choisir les meilleurs partenaires de transport."
+    }
+  },
+  "howItWorks": {
+    "title": "Comment ça marche",
+    "subtitle": "En quelques étapes seulement vers votre transport sécurisé",
+    "step1": {
+      "title": "Créer ou rechercher des offres",
+      "description": "Créez une offre de transport ou recherchez des transports disponibles vers votre destination souhaitée."
+    },
+    "step2": {
+      "title": "Trouver des partenaires",
+      "description": "Trouvez le bon partenaire de transport grâce à notre système de correspondance et aux profils évalués."
+    },
+    "step3": {
+      "title": "Payer en sécurité",
+      "description": "Payez en toute sécurité avec PayPal ou carte de crédit. Votre argent est protégé jusqu'à la livraison."
+    },
+    "step4": {
+      "title": "Suivre le transport",
+      "description": "Suivez votre transport en temps réel et recevez des mises à jour sur le statut de votre envoi."
+    }
+  },
+  "pricing": {
+    "title": "Tarification Transparente",
+    "subtitle": "Aucun coût caché - vous voyez toujours ce que vous payez",
+    "serviceFee": "Frais de Service",
+    "transportPrice": "Prix du Transport",
+    "serviceFeePercent": "Frais de Service (19%)",
+    "totalPrice": "Prix Total",
+    "note": "💡 Les frais de service couvrent tous les coûts de la plateforme, le traitement des paiements et le support client."
+  },
+  "cta": {
+    "title": "Prêt à commencer ?",
+    "subtitle": "Téléchargez l'application GlobalContainer et commencez le transport sécurisé vers l'Afrique dès aujourd'hui.",
+    "downloadApp": "Télécharger l'App",
+    "contact": "Nous Contacter"
+  },
+  "footer": {
+    "description": "Votre partenaire fiable pour le transport sécurisé vers l'Afrique.",
+    "app": "App",
+    "download": "Télécharger",
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs",
+    "support": "Support",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "supportEmail": "Support",
+    "legal": "Légal",
+    "terms": "Conditions",
+    "privacy": "Confidentialité",
+    "imprint": "Mentions Légales",
+    "copyright": "© 2025 GlobalContainer. Tous droits réservés."
+  },
+  "comingSoon": {
+    "title": "🚛 Application GlobalContainer",
+    "message": "L'application sera bientôt disponible !",
+    "subtitle": "Restez à l'écoute et suivez-nous pour les mises à jour.",
+    "thanks": "Merci pour votre intérêt !"
+  },
+  "appPreview": {
+    "title": "🚛 GlobalContainer",
+    "subtitle": "Offres de Transport",
+    "transportDate": "Transport le"
+  }
+}
