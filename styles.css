@@ -170,7 +170,6 @@ h1, h2, h3, h4, h5, h6 {
     object-fit: contain;
     display: block;
     flex-shrink: 0;
-    background-color: white;
     border-radius: 8px;
     padding: 6px;
     opacity: 1 !important;
@@ -628,7 +627,6 @@ h1, h2, h3, h4, h5, h6 {
     object-fit: contain;
     display: block;
     flex-shrink: 0;
-    background-color: white;
     border-radius: 8px;
     padding: 6px;
     opacity: 1 !important;
