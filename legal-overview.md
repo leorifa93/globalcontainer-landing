@@ -14,7 +14,7 @@ Diese Übersicht listet alle rechtlichen Dokumente für die GlobalContainer App 
   - Leistungen der Plattform
   - Nutzerregistrierung
   - Transportdienstleistungen
-  - Preise und Zahlungen (19% Service-Gebühr)
+  - Preise und Zahlungen (10% Service-Gebühr)
   - Haftung und Gewährleistung
   - Datenschutz
   - Kündigung

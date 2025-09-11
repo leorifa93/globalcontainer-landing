@@ -38,7 +38,7 @@ Die Landing Page verwendet das exakte Farbschema der GlobalContainer App:
 Die Landing Page präsentiert alle wichtigen Features der GlobalContainer App:
 
 1. **Vertrauenswürdige Partner** - Geprüfte und bewertete Transporteure
-2. **Transparente Preise** - Keine versteckten Kosten, 19% Service-Gebühr
+2. **Transparente Preise** - Keine versteckten Kosten, 10% Service-Gebühr
 3. **Echtzeit-Tracking** - Status-Updates und Benachrichtigungen
 4. **Sichere Zahlungen** - PayPal und Kreditkarte mit Schutz
 5. **Ganz Afrika** - Transporte zu allen afrikanischen Zielen
