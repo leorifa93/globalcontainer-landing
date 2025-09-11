@@ -138,7 +138,7 @@ Die modulare Struktur ermöglicht einfache Erweiterungen ohne bestehende Funktio
 Bei Fragen oder Problemen:
 
 - GitHub Issues erstellen
-- E-Mail an support@globalcontainer.com
+- E-Mail an support@global-container.net
 - Dokumentation in der App konsultieren
 
 ---

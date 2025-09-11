@@ -68,6 +68,11 @@ const translations = {
         'footer.privacy': 'Datenschutz',
         'footer.imprint': 'Impressum',
         'footer.copyright': '© 2025 GlobalContainer. Alle Rechte vorbehalten.',
+        'cookies.title': 'Cookies',
+        'cookies.message': 'Wir verwenden Cookies für die Sprachauswahl und um die Website optimal zu gestalten.',
+        'cookies.learnMore': 'Mehr erfahren',
+        'cookies.accept': 'Akzeptieren',
+        'cookies.decline': 'Ablehnen',
         'appPreview.title': '🚛 GlobalContainer',
         'appPreview.subtitle': 'Transport-Angebote',
         'appPreview.transportDate': 'Transport am',
@@ -187,6 +192,11 @@ const translations = {
         'footer.privacy': 'Privacy',
         'footer.imprint': 'Imprint',
         'footer.copyright': '© 2025 GlobalContainer. All rights reserved.',
+        'cookies.title': 'Cookies',
+        'cookies.message': 'We use cookies for language selection and to optimize the website.',
+        'cookies.learnMore': 'Learn more',
+        'cookies.accept': 'Accept',
+        'cookies.decline': 'Decline',
         'appPreview.title': '🚛 GlobalContainer',
         'appPreview.subtitle': 'Transport Offers',
         'appPreview.transportDate': 'Transport on',
@@ -306,6 +316,11 @@ const translations = {
         'footer.privacy': 'Confidentialité',
         'footer.imprint': 'Mentions Légales',
         'footer.copyright': '© 2025 GlobalContainer. Tous droits réservés.',
+        'cookies.title': 'Cookies',
+        'cookies.message': 'Nous utilisons des cookies pour la sélection de langue et pour optimiser le site web.',
+        'cookies.learnMore': 'En savoir plus',
+        'cookies.accept': 'Accepter',
+        'cookies.decline': 'Refuser',
         'appPreview.title': '🚛 GlobalContainer',
         'appPreview.subtitle': 'Offres de Transport',
         'appPreview.transportDate': 'Transport le',
@@ -425,6 +440,11 @@ const translations = {
         'footer.privacy': 'Bokomi ya Moto',
         'footer.imprint': 'Ba Informations',
         'footer.copyright': '© 2025 GlobalContainer. Ba droits nyonso esalelami.',
+        'cookies.title': 'Ba Cookies',
+        'cookies.message': 'Tosalaka ba cookies mpo na kozua loko ya maloba mpe mpo na kobongisa site na biso.',
+        'cookies.learnMore': 'Koyeba mingi',
+        'cookies.accept': 'Koyambola',
+        'cookies.decline': 'Koboya',
         'appPreview.title': '🚛 GlobalContainer',
         'appPreview.subtitle': 'Ba Offres ya Transport',
         'appPreview.transportDate': 'Transport na',
@@ -575,4 +595,47 @@ document.addEventListener('DOMContentLoaded', function() {
         // Even for default language, update navigation links
         updateNavigationLinks('de');
     }
+    
+    // Initialize cookie banner
+    initializeCookieBanner();
 });
+
+// Cookie Banner Functions
+function initializeCookieBanner() {
+    const cookieBanner = document.getElementById('cookieBanner');
+    if (!cookieBanner) return;
+    
+    // Check if user has already made a choice
+    const cookieChoice = localStorage.getItem('globalcontainer-cookie-choice');
+    if (cookieChoice) {
+        cookieBanner.style.display = 'none';
+        return;
+    }
+    
+    // Show banner after a short delay
+    setTimeout(() => {
+        cookieBanner.classList.add('show');
+    }, 1000);
+}
+
+function acceptCookies() {
+    localStorage.setItem('globalcontainer-cookie-choice', 'accepted');
+    hideCookieBanner();
+}
+
+function declineCookies() {
+    localStorage.setItem('globalcontainer-cookie-choice', 'declined');
+    // Clear language preference if declined
+    localStorage.removeItem('globalcontainer-language');
+    hideCookieBanner();
+}
+
+function hideCookieBanner() {
+    const cookieBanner = document.getElementById('cookieBanner');
+    if (cookieBanner) {
+        cookieBanner.classList.remove('show');
+        setTimeout(() => {
+            cookieBanner.style.display = 'none';
+        }, 300);
+    }
+}
