@@ -144,9 +144,15 @@
                     return;
                 }
 
+                // First, get email from the oobCode before using it
+                const { checkActionCode, applyActionCode } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js');
+                const actionCodeInfo = await checkActionCode(auth, oobCode);
+                const email = actionCodeInfo.data.email;
+                console.log('Email extracted from oobCode:', email);
+
                 // Apply the email verification code
-                const { applyActionCode } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js');
                 await applyActionCode(auth, oobCode);
+                console.log('applyActionCode successful');
 
                 // Wait for auth state to update
                 await new Promise(resolve => setTimeout(resolve, 1000));
@@ -165,12 +171,7 @@
                         console.log('User not authenticated or email not verified');
                         // Try Cloud Function as fallback
                         try {
-                            console.log('Trying Cloud Function as fallback');
-                            // Get email from the oobCode first
-                            const { checkActionCode } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js');
-                            const actionCodeInfo = await checkActionCode(auth, oobCode);
-                            const email = actionCodeInfo.data.email;
-                            
+                            console.log('Trying Cloud Function as fallback with email:', email);
                             // Use httpsCallable with the correct region
                             const confirmEmailVerification = httpsCallable(functions, 'confirmEmailVerification');
                             const result = await confirmEmailVerification({ email: email });
