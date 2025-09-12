@@ -166,9 +166,14 @@
                         // Try Cloud Function as fallback
                         try {
                             console.log('Trying Cloud Function as fallback');
+                            // Get email from the oobCode first
+                            const { checkActionCode } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js');
+                            const actionCodeInfo = await checkActionCode(auth, oobCode);
+                            const email = actionCodeInfo.data.email;
+                            
                             // Use httpsCallable with the correct region
                             const confirmEmailVerification = httpsCallable(functions, 'confirmEmailVerification');
-                            const result = await confirmEmailVerification({ oobCode: oobCode });
+                            const result = await confirmEmailVerification({ email: email });
                             console.log('Cloud Function success:', result.data);
                         } catch (cfError) {
                             console.error('Cloud Function also failed:', cfError);
