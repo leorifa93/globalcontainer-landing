@@ -97,7 +97,7 @@
         
         <div id="actions" style="display: none;">
             <a href="#" id="openApp" class="button">App öffnen</a>
-            <a href="https://globalcontainer.app" class="button">Zur Website</a>
+            <a href="https://www.global-container.net" class="button">Zur Website</a>
         </div>
     </div>
 
@@ -107,14 +107,14 @@
         import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
         import { getFunctions, httpsCallable } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-functions.js';
 
-        // Firebase config - replace with actual values
+        // Firebase config - using the API key from the URL
         const firebaseConfig = {
-            apiKey: "REPLACE_WITH_ACTUAL_API_KEY",
+            apiKey: "AIzaSyDjdzj9Px4kEQ6zylSpGUigtBIZLB8nA-M",
             authDomain: "globalcontainer-ba855.firebaseapp.com",
             projectId: "globalcontainer-ba855",
             storageBucket: "globalcontainer-ba855.appspot.com",
-            messagingSenderId: "REPLACE_WITH_ACTUAL_SENDER_ID",
-            appId: "REPLACE_WITH_ACTUAL_APP_ID"
+            messagingSenderId: "2390540501",
+            appId: "1:2390540501:web:fe3e1acb6a91042422a25c"
         };
 
         const app = initializeApp(firebaseConfig);
@@ -126,31 +126,25 @@
             const actionsDiv = document.getElementById('actions');
             
             try {
-                // Wait for user to be authenticated
-                const user = await new Promise((resolve, reject) => {
-                    const unsubscribe = onAuthStateChanged(auth, (user) => {
-                        unsubscribe();
-                        if (user) {
-                            resolve(user);
-                        } else {
-                            reject(new Error('Kein authentifizierter Benutzer gefunden'));
-                        }
-                    });
-                });
+                // Get parameters from URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const mode = urlParams.get('mode');
+                const oobCode = urlParams.get('oobCode');
+                const apiKey = urlParams.get('apiKey');
+                
+                console.log('URL params:', { mode, oobCode, apiKey });
 
-                console.log('User found:', user.email, 'Verified:', user.emailVerified);
-
-                if (!user.emailVerified) {
+                if (mode !== 'verifyEmail' || !oobCode) {
                     statusDiv.className = 'status error';
-                    statusDiv.innerHTML = '❌ E-Mail-Adresse ist nicht verifiziert.<br><br>Bitte klicken Sie erneut auf den Verifizierungslink in Ihrer E-Mail.';
+                    statusDiv.innerHTML = '❌ Ungültiger Verifizierungslink.<br><br>Bitte verwenden Sie den Link aus Ihrer E-Mail.';
                     return;
                 }
 
-                // Call Cloud Function to confirm verification
-                const confirmEmailVerification = httpsCallable(functions, 'confirmEmailVerification');
-                await confirmEmailVerification();
+                // Apply the email verification code
+                const { applyActionCode } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js');
+                await applyActionCode(auth, oobCode);
 
-                // Success
+                // Success - email is now verified
                 statusDiv.className = 'status success';
                 statusDiv.innerHTML = '✅ E-Mail-Adresse erfolgreich verifiziert!<br><br>Sie können jetzt die App verwenden.';
                 
@@ -158,7 +152,7 @@
                 
                 // Set app link
                 const openAppLink = document.getElementById('openApp');
-                openAppLink.href = `globalcontainerapp://verify-success?email=${encodeURIComponent(user.email)}`;
+                openAppLink.href = `globalcontainerapp://verify-success`;
 
             } catch (error) {
                 console.error('Verification error:', error);
