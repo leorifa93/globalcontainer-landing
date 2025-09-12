@@ -146,22 +146,15 @@
                 const { applyActionCode } = await import('https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js');
                 await applyActionCode(auth, oobCode);
 
-                // Wait a moment for the auth state to update
-                await new Promise(resolve => setTimeout(resolve, 1000));
-
-                // Now get the user to update Firestore
-                const user = auth.currentUser;
-                if (user && user.emailVerified) {
-                    try {
-                        // Call Cloud Function to update Firestore
-                        const confirmEmailVerification = httpsCallable(functions, 'confirmEmailVerification');
-                        await confirmEmailVerification();
-                        console.log('Firestore updated successfully');
-                    } catch (error) {
-                        console.log('Could not update Firestore, but email is verified:', error);
-                    }
-                } else {
-                    console.log('User not authenticated or email not verified');
+                // Call Cloud Function to update Firestore with oobCode
+                try {
+                    console.log('Calling Cloud Function with oobCode:', oobCode);
+                    const confirmEmailVerification = httpsCallable(functions, 'confirmEmailVerification');
+                    const result = await confirmEmailVerification({ oobCode: oobCode });
+                    console.log('Firestore updated successfully:', result.data);
+                } catch (error) {
+                    console.error('Error calling Cloud Function:', error);
+                    console.log('Could not update Firestore, but email is verified:', error.message);
                 }
 
                 // Success - email is now verified
