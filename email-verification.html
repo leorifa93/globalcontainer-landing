@@ -124,7 +124,7 @@
 
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
-        const functions = getFunctions(app);
+        const functions = getFunctions(app, 'us-central1');
         const db = getFirestore(app);
 
         async function verifyEmail() {
@@ -166,6 +166,7 @@
                         // Try Cloud Function as fallback
                         try {
                             console.log('Trying Cloud Function as fallback');
+                            // Use httpsCallable with the correct region
                             const confirmEmailVerification = httpsCallable(functions, 'confirmEmailVerification');
                             const result = await confirmEmailVerification({ oobCode: oobCode });
                             console.log('Cloud Function success:', result.data);
