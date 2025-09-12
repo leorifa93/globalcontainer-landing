@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Mail-Verifizierung - GlobalContainer</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #A0522D 0%, #FFB300 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 100%;
+        }
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: #A0522D;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        h1 {
+            color: #3B2F2F;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+        .status {
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-weight: 500;
+        }
+        .success {
+            background: #E8F5E8;
+            color: #2E7D32;
+            border: 2px solid #4CAF50;
+        }
+        .error {
+            background: #FFEBEE;
+            color: #C62828;
+            border: 2px solid #F44336;
+        }
+        .loading {
+            background: #FFF3E0;
+            color: #FFB300;
+            border: 2px solid #FFB300;
+        }
+        .button {
+            background: #A0522D;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 10px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background: #8B4513;
+        }
+        .button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">GC</div>
+        <h1>E-Mail-Verifizierung</h1>
+        
+        <div id="status" class="status loading">
+            🔄 Verifiziere E-Mail-Adresse...
+        </div>
+        
+        <div id="actions" style="display: none;">
+            <a href="#" id="openApp" class="button">App öffnen</a>
+            <a href="https://globalcontainer.app" class="button">Zur Website</a>
+        </div>
+    </div>
+
+    <script type="module">
+        // Firebase SDK
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+        import { getFunctions, httpsCallable } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-functions.js';
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyC9fDcJQp4S2LVVmpyue7OAcdCV_O9flls",
+            authDomain: "globalcontainer-ba855.firebaseapp.com",
+            projectId: "globalcontainer-ba855",
+            storageBucket: "globalcontainer-ba855.appspot.com",
+            messagingSenderId: "2390540501",
+            appId: "1:2390540501:web:fe3e1acb6a91042422a25c"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const functions = getFunctions(app);
+
+        async function verifyEmail() {
+            const statusDiv = document.getElementById('status');
+            const actionsDiv = document.getElementById('actions');
+            
+            try {
+                // Wait for user to be authenticated
+                const user = await new Promise((resolve, reject) => {
+                    const unsubscribe = onAuthStateChanged(auth, (user) => {
+                        unsubscribe();
+                        if (user) {
+                            resolve(user);
+                        } else {
+                            reject(new Error('Kein authentifizierter Benutzer gefunden'));
+                        }
+                    });
+                });
+
+                console.log('User found:', user.email, 'Verified:', user.emailVerified);
+
+                if (!user.emailVerified) {
+                    statusDiv.className = 'status error';
+                    statusDiv.innerHTML = '❌ E-Mail-Adresse ist nicht verifiziert.<br><br>Bitte klicken Sie erneut auf den Verifizierungslink in Ihrer E-Mail.';
+                    return;
+                }
+
+                // Call Cloud Function to confirm verification
+                const confirmEmailVerification = httpsCallable(functions, 'confirmEmailVerification');
+                await confirmEmailVerification();
+
+                // Success
+                statusDiv.className = 'status success';
+                statusDiv.innerHTML = '✅ E-Mail-Adresse erfolgreich verifiziert!<br><br>Sie können jetzt die App verwenden.';
+                
+                actionsDiv.style.display = 'block';
+                
+                // Set app link
+                const openAppLink = document.getElementById('openApp');
+                openAppLink.href = `globalcontainerapp://verify-success?email=${encodeURIComponent(user.email)}`;
+
+            } catch (error) {
+                console.error('Verification error:', error);
+                statusDiv.className = 'status error';
+                statusDiv.innerHTML = '❌ Fehler bei der Verifizierung:<br>' + error.message;
+            }
+        }
+
+        // Start verification when page loads
+        verifyEmail();
+    </script>
+</body>
+</html>
