@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "GlobalContainer - Secure Transport to Africa",
-    "description": "Connect with trusted transporters and ship your goods safely and reliably to Africa. Transparent pricing, real-time tracking and secure payments.",
+    "title": "GlobalContainer - Secure Transport Worldwide",
+    "description": "Connect with trusted transporters and ship your goods safely and reliably worldwide. Transparent pricing, real-time tracking and secure payments.",
     "lang": "en"
   },
   "navigation": {
@@ -12,8 +12,8 @@
     "downloadApp": "Download App"
   },
   "hero": {
-    "title": "Secure Transport to",
-    "titleHighlight": "Africa",
+    "title": "Secure Transport",
+    "titleHighlight": "Worldwide",
     "subtitle": "Connect with trusted transporters and ship your goods safely and reliably. Transparent pricing, real-time tracking and secure payments.",
     "downloadApp": "Download App",
     "learnMore": "Learn More",
@@ -25,7 +25,7 @@
   },
   "features": {
     "title": "Why GlobalContainer?",
-    "subtitle": "We make transport to Africa simple, safe and transparent",
+    "subtitle": "We make global transport simple, safe and transparent",
     "trustedPartners": {
       "title": "Trusted Partners",
       "description": "All our transport partners are carefully vetted and rated. Your goods are in safe hands."
@@ -42,9 +42,9 @@
       "title": "Secure Payments",
       "description": "Pay safely with PayPal or credit card. Your money is protected until successful delivery."
     },
-    "allAfrica": {
-      "title": "All Africa",
-      "description": "From Germany to all of Africa. Find transports to your desired destination."
+    "global": {
+      "title": "Worldwide",
+      "description": "From Germany to the world. Find transports to your desired destination."
     },
     "ratingSystem": {
       "title": "Rating System",
@@ -82,12 +82,12 @@
   },
   "cta": {
     "title": "Ready to start?",
-    "subtitle": "Download the GlobalContainer app and start secure transport to Africa today.",
+    "subtitle": "Download the GlobalContainer app and start secure, worldwide transports today.",
     "downloadApp": "Download App",
     "contact": "Get in Touch"
   },
   "footer": {
-    "description": "Your reliable partner for secure transport to Africa.",
+    "description": "Your reliable partner for secure, worldwide transport.",
     "app": "App",
     "download": "Download",
     "features": "Features",
@@ -112,5 +112,19 @@
     "title": "🚛 GlobalContainer",
     "subtitle": "Transport Offers",
     "transportDate": "Transport on"
+  },
+  "transportTypes": {
+    "title": "Transport Types",
+    "subtitle": "Choose the right transport type for your shipment",
+    "container": "Container",
+    "containerDesc": "Ideal for large volumes, palletized goods or moves.",
+    "transporter": "Transporter",
+    "transporterDesc": "Flexible for mid-sized shipments and general cargo.",
+    "car": "Car",
+    "carDesc": "Cost-effective for small parcels and express trips.",
+    "roller": "Scooter",
+    "rollerDesc": "Fast in the city for documents and very small items.",
+    "flight": "Flight",
+    "flightDesc": "For urgent international shipments with short transit time."
   }
 }

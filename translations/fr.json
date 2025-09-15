@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "GlobalContainer - Transport Sécurisé vers l'Afrique",
-    "description": "Connectez-vous avec des transporteurs de confiance et expédiez vos marchandises en toute sécurité et fiabilité vers l'Afrique. Tarification transparente, suivi en temps réel et paiements sécurisés.",
+    "title": "GlobalContainer - Transport Sécurisé dans le monde",
+    "description": "Connectez-vous avec des transporteurs de confiance et expédiez vos marchandises en toute sécurité et fiabilité dans le monde entier. Tarification transparente, suivi en temps réel et paiements sécurisés.",
     "lang": "fr"
   },
   "navigation": {
@@ -12,8 +12,8 @@
     "downloadApp": "Télécharger l'App"
   },
   "hero": {
-    "title": "Transport Sécurisé vers",
-    "titleHighlight": "l'Afrique",
+    "title": "Transport Sécurisé",
+    "titleHighlight": "dans le monde",
     "subtitle": "Connectez-vous avec des transporteurs de confiance et expédiez vos marchandises en toute sécurité et fiabilité. Tarification transparente, suivi en temps réel et paiements sécurisés.",
     "downloadApp": "Télécharger l'App",
     "learnMore": "En savoir plus",
@@ -25,7 +25,7 @@
   },
   "features": {
     "title": "Pourquoi GlobalContainer ?",
-    "subtitle": "Nous rendons le transport vers l'Afrique simple, sûr et transparent",
+    "subtitle": "Nous rendons le transport mondial simple, sûr et transparent",
     "trustedPartners": {
       "title": "Partenaires de Confiance",
       "description": "Tous nos partenaires de transport sont soigneusement vérifiés et évalués. Vos marchandises sont entre de bonnes mains."
@@ -42,9 +42,9 @@
       "title": "Paiements Sécurisés",
       "description": "Payez en toute sécurité avec PayPal ou carte de crédit. Votre argent est protégé jusqu'à la livraison réussie."
     },
-    "allAfrica": {
-      "title": "Toute l'Afrique",
-      "description": "De l'Allemagne vers toute l'Afrique. Trouvez des transports vers votre destination souhaitée."
+    "global": {
+      "title": "Dans le monde",
+      "description": "De l'Allemagne vers le monde. Trouvez des transports vers votre destination souhaitée."
     },
     "ratingSystem": {
       "title": "Système d'Évaluation",
@@ -82,12 +82,12 @@
   },
   "cta": {
     "title": "Prêt à commencer ?",
-    "subtitle": "Téléchargez l'application GlobalContainer et commencez le transport sécurisé vers l'Afrique dès aujourd'hui.",
+    "subtitle": "Téléchargez l'application GlobalContainer et commencez des transports sécurisés dans le monde dès aujourd'hui.",
     "downloadApp": "Télécharger l'App",
     "contact": "Nous Contacter"
   },
   "footer": {
-    "description": "Votre partenaire fiable pour le transport sécurisé vers l'Afrique.",
+    "description": "Votre partenaire fiable pour des transports sécurisés dans le monde.",
     "app": "App",
     "download": "Télécharger",
     "features": "Fonctionnalités",
@@ -112,5 +112,19 @@
     "title": "🚛 GlobalContainer",
     "subtitle": "Offres de Transport",
     "transportDate": "Transport le"
+  },
+  "transportTypes": {
+    "title": "Types de Transport",
+    "subtitle": "Choisissez le type de transport adapté à votre envoi",
+    "container": "Conteneur",
+    "containerDesc": "Idéal pour de grands volumes, palettes ou déménagements.",
+    "transporter": "Camionnettes",
+    "transporterDesc": "Flexible pour des envois de taille moyenne et marchandises diverses.",
+    "car": "Voiture",
+    "carDesc": "Économique pour petits colis et trajets express.",
+    "roller": "Scooter",
+    "rollerDesc": "Rapide en ville pour documents et très petits envois.",
+    "flight": "Avion",
+    "flightDesc": "Pour des envois internationaux urgents à court délai."
   }
 }

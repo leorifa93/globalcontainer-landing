@@ -112,5 +112,19 @@
     "title": "🚛 GlobalContainer",
     "subtitle": "Ba Offres ya Transport",
     "transportDate": "Transport na"
+  },
+  "transportTypes": {
+    "title": "Bokolongo ya Transport",
+    "subtitle": "Pona lolenge ya transport ebongi mpo na envoi na yo",
+    "container": "Kontenere",
+    "containerDesc": "Malamu mpo na biloko mingi, ba palettes to kobongisa biloko.",
+    "transporter": "Kamioneta",
+    "transporterDesc": "Flexible mpo na ba envoi ya sukali mpe biloko ndenge na ndenge.",
+    "car": "Moto",
+    "carDesc": "Ekosunga mpo na bapaketi ya mike mpe mbangu.",
+    "roller": "Scooter",
+    "rollerDesc": "Mbangu na engumba mpo na bandokima mpe biloko ya moke.",
+    "flight": "Avion",
+    "flightDesc": "Mpo na ba envoi ya mbangu ya mokili mobimba."
   }
 }
