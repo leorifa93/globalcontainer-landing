@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "GlobalContainer - Kotinda ya Kobomba tí Afrika",
+    "title": "GlobalTransport - Kotinda ya Kobomba tí Afrika",
     "description": "Kangola na ba transporteurs ya kobomba mpe tinda biloko na yo na nzela ya kobomba tí Afrika. Ntalo ya polele, kolanda na tango ya solo mpe mbongo ya kobomba.",
     "lang": "ln"
   },
@@ -24,7 +24,7 @@
     }
   },
   "features": {
-    "title": "Mpo na nini GlobalContainer?",
+    "title": "Mpo na nini GlobalTransport?",
     "subtitle": "Tosalaka transport tí Afrika na nzela ya pétépété, ya kobomba mpe ya polele",
     "trustedPartners": {
       "title": "Ba Partenaires ya Kobomba",
@@ -82,7 +82,7 @@
   },
   "cta": {
     "title": "Ozali koyebana na kobanda?",
-    "subtitle": "Tonga application GlobalContainer mpe banda transport ya kobomba tí Afrika lelo.",
+    "subtitle": "Tonga application GlobalTransport mpe banda transport ya kobomba tí Afrika lelo.",
     "downloadApp": "Kotonga App",
     "contact": "Kangola na biso"
   },
@@ -100,16 +100,16 @@
     "terms": "Ba Conditions",
     "privacy": "Bokomi ya Moto",
     "imprint": "Ba Informations",
-    "copyright": "© 2025 GlobalContainer. Ba droits nyonso esalelami."
+    "copyright": "© 2025 GlobalTransport. Ba droits nyonso esalelami."
   },
   "comingSoon": {
-    "title": "🚛 Application GlobalContainer",
+    "title": "🚛 Application GlobalTransport",
     "message": "Application ekokoma ezali na nsima!",
     "subtitle": "Kanga na sango mpe landa biso mpo na ba mises à jour.",
     "thanks": "Tosepeli mpo na intérêt na yo!"
   },
   "appPreview": {
-    "title": "🚛 GlobalContainer",
+    "title": "🚛 GlobalTransport",
     "subtitle": "Ba Offres ya Transport",
     "transportDate": "Transport na"
   },

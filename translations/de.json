@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "GlobalContainer - Sichere Transporte weltweit",
+    "title": "GlobalTransport - Sichere Transporte weltweit",
     "description": "Verbinde dich mit vertrauenswürdigen Transporteuren und verschicke deine Güter sicher und zuverlässig weltweit. Transparente Preise, Echtzeit-Tracking und sichere Zahlungen.",
     "lang": "de"
   },
@@ -24,7 +24,7 @@
     }
   },
   "features": {
-    "title": "Warum GlobalContainer?",
+    "title": "Warum GlobalTransport?",
     "subtitle": "Wir machen weltweite Transporte einfach, sicher und transparent",
     "trustedPartners": {
       "title": "Vertrauenswürdige Partner",
@@ -82,7 +82,7 @@
   },
   "cta": {
     "title": "Bereit zu starten?",
-    "subtitle": "Lade die GlobalContainer App herunter und beginne noch heute mit sicheren, weltweiten Transporten.",
+    "subtitle": "Lade die GlobalTransport App herunter und beginne noch heute mit sicheren, weltweiten Transporten.",
     "downloadApp": "App herunterladen",
     "contact": "Kontakt aufnehmen"
   },
@@ -100,10 +100,10 @@
     "terms": "AGB",
     "privacy": "Datenschutz",
     "imprint": "Impressum",
-    "copyright": "© 2025 GlobalContainer. Alle Rechte vorbehalten."
+    "copyright": "© 2025 GlobalTransport. Alle Rechte vorbehalten."
   },
   "comingSoon": {
-    "title": "🚛 GlobalContainer App",
+    "title": "🚛 GlobalTransport App",
     "message": "Die App ist in Kürze verfügbar!",
     "subtitle": "Bleib auf dem Laufenden und folge uns für Updates.",
     "thanks": "Vielen Dank für dein Interesse!"
